@@ -36,9 +36,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
 ## 本プロジェクトについて
+
 これは、ポートフォリオサイトである。Next.jsを主としてフロントエンド学中の一環として利用する。
 
 ## 環境
+
 - typescript
 - tailwindcss
   - [公式](https://tailwindcss.com/)
@@ -49,3 +51,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
   - [公式](https://mui.com/material-ui/getting-started/)
 - GitHub
   - [リポジトリ](https://github.com/satty-dev/next-portfolio)
+- Prettier
+```bash
+# 以下のコマンドで実行（.prettierignoreで設定されたファイルは無視）
+npx prettier . --write
+```
