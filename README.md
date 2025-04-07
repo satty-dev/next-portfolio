@@ -56,3 +56,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # 以下のコマンドで実行（.prettierignoreで設定されたファイルは無視）
 npx prettier . --write
 ```
+
+## 実装参考サイト
+
+- 2025.04.04 [Loading UI](https://zenn.dev/y_ta/articles/b1908ec6af6819)
+- 2025.04.08 [ライト・ダークモード]](https://qiita.com/KadoProG/items/15ceebf1aef774690bdf)

@@ -1,6 +1,4 @@
-import Loading from '@/app/loading';
 import Link from 'next/link';
-import { Suspense } from 'react';
 
 interface TBlog {
     id: string;
