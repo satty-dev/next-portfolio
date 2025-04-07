@@ -34,3 +34,18 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 本プロジェクトについて
+これは、ポートフォリオサイトである。Next.jsを主としてフロントエンド学中の一環として利用する。
+
+## 環境
+- typescript
+- tailwindcss
+  - [公式](https://tailwindcss.com/)
+- App Router
+  - [公式](https://nextjs.org/docs/app)
+  - [仕組みとファイル構造](https://zenn.dev/blueish/articles/4b2ae3781ade57)
+- Materiak UI
+  - [公式](https://mui.com/material-ui/getting-started/)
+- GitHub
+  - [リポジトリ](https://github.com/satty-dev/next-portfolio)
