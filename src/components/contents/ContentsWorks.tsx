@@ -17,5 +17,5 @@ const getWorksData = async (waitTime: number) => {
 export const ContentsWorks = async () => {
     const worksData = await getWorksData(1000);
 
-    return <TemplateWorks works={worksData}/>;
+    return <TemplateWorks works={worksData} />;
 };
