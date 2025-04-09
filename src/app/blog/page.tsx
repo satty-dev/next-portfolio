@@ -1,6 +1,6 @@
 // components
 import BlogList from '@/components/BlogList';
-import { Template } from '@/components/Template';
+import { Template } from '@/components/layouts/Template';
 
 export default async function BlogPage() {
     return (

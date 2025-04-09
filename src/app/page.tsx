@@ -1,5 +1,5 @@
 // components
-import { Template } from '@/components/Template';
+import { Template } from '@/components/layouts/Template';
 
 export default function Home() {
     return <Template>Hello World!</Template>;

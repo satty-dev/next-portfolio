@@ -2,7 +2,7 @@
 import Container from '@mui/material/Container';
 
 // components
-import { Header } from '@/components/Header';
+import { Header } from '@/components/layouts/Header';
 
 type Template = {
     children: React.ReactNode;
