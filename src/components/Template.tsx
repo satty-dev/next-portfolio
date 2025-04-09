@@ -1,3 +1,6 @@
+// MUI
+import Container from '@mui/material/Container';
+
 // components
 import { Header } from '@/components/Header';
 
@@ -11,7 +14,9 @@ export const Template = (props: Template) => {
     return (
         <div>
             <Header />
-            <main>{children}</main>
+            <Container maxWidth='lg'>
+                <main>{children}</main>
+            </Container>
             <footer></footer>
         </div>
     );
