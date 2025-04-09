@@ -1,9 +1,12 @@
 'use client';
 
+import React from 'react';
+import { useState, useMemo, useContext, createContext } from 'react';
+
+// MUI
 import { PaletteMode, useMediaQuery } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import React from 'react';
 
 /**カラーモードの選択オプション */
 export type ColorModeChoice = 'light' | 'dark' | 'device';
@@ -15,13 +18,10 @@ interface ColorModeContextType {
     toggleColorMode: (colorMode: ColorModeChoice) => void;
 }
 
-/**カラーモードのコンテキスト */
-const ColorModeContext = React.createContext<ColorModeContextType>({
-    selectedMode: 'light', // 仮の設定
-    toggleColorMode: (colorMode: ColorModeChoice) => {
-        colorMode; // 仮の設定
-    },
-});
+/**カラーモードのコンテキスト（初期値はundefined） */
+const ColorModeContext = createContext<ColorModeContextType | undefined>(
+    undefined,
+);
 
 /**MUIの設定プロバイダ */
 export const ThemeRegistry = (props: { children: React.ReactNode }) => {
@@ -30,17 +30,16 @@ export const ThemeRegistry = (props: { children: React.ReactNode }) => {
         : 'light';
 
     // ユーザが選択しているカラーモード
-    const [selectedMode, setSelectedMode] =
-        React.useState<ColorModeChoice>('light');
+    const [selectedMode, setSelectedMode] = useState<ColorModeChoice>('device');
 
-    /** 適用されるカラーモードの設定 */
-    const mode = React.useMemo<PaletteMode>(
+    /** 実際に適用されるMUIのカラーモード */
+    const mode = useMemo<PaletteMode>(
         () => (selectedMode !== 'device' ? selectedMode : prefersInit),
         [prefersInit, selectedMode],
     );
 
-    // コンテキストの指定（他のコンポーネントでも呼び出して使えるように）
-    const colorMode = React.useMemo(
+    // Contextで提供する値
+    const colorMode = useMemo(
         () => ({
             selectedMode,
             toggleColorMode: (colorMode: ColorModeChoice) => {
@@ -50,8 +49,8 @@ export const ThemeRegistry = (props: { children: React.ReactNode }) => {
         [selectedMode],
     );
 
-    // カスタムシーン
-    const theme = React.useMemo(
+    // テーマ作成
+    const theme = useMemo(
         () =>
             createTheme({
                 palette: { mode },
@@ -69,6 +68,13 @@ export const ThemeRegistry = (props: { children: React.ReactNode }) => {
     );
 };
 
-/**ColorModeContextを簡単に使うためのユーティリティ関数 */
-export const useColorModeContext = (): ColorModeContextType =>
-    React.useContext(ColorModeContext);
+/**ColorModeContextを簡単に使うためのカスタムフック */
+export const useColorModeContext = (): ColorModeContextType => {
+    const context = useContext(ColorModeContext);
+    if (!context) {
+        throw new Error(
+            'useColorModeContext must be used within ThemeRegistry',
+        );
+    }
+    return context;
+};
