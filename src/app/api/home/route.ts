@@ -13,6 +13,17 @@ const home: THome = {
     main_image:
         'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
     link: '',
+    rotating_message: {
+        fixed_text: 'Creative',
+        rotating_text_arry: [
+            'coding',
+            'design',
+            'UI/UX',
+            'visual',
+            'thinking',
+            'management',
+        ],
+    },
 };
 
 export async function GET() {
