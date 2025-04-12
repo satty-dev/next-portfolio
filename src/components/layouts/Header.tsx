@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+import Link from 'next/link';
 
 // MUI
 import { Box, Button, Paper, Stack } from '@mui/material';
@@ -18,7 +19,20 @@ export const Header = () => {
         <header>
             <Paper
                 component={Box}
-                p={2}>
+                p={2}
+                className='flex items-center justify-between'>
+                <ul>
+                    <li>
+                        <Link href={{ pathname: '/' }}>Home</Link>
+                    </li>
+                    <li>
+                        <Link href={{ pathname: '/works' }}>works</Link>
+                    </li>
+                    <li>
+                        {' '}
+                        <Link href={{ pathname: '/blog' }}>blog</Link>
+                    </li>
+                </ul>
                 <Stack spacing={1}>
                     <Button
                         startIcon={<LightModeIcon />}

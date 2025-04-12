@@ -8,14 +8,15 @@ import { MediaCard } from '@/components/materials/MediaCaed';
 // types
 import { TWork } from '@/types/index';
 
-type TemplateWorksProps = {
+type TemplateHomeProps = {
     works: TWork[];
 };
 
-export const TemplateWorks = (props: TemplateWorksProps) => {
+export const TemplateHome = (props: TemplateHomeProps) => {
     const { works } = props;
     return (
         <Template>
+            Hello World!
             <div className='container mx-auto py-[50px]'>
                 <h2 className='mb-5 text-[50px] font-bold'>Works</h2>
                 <Grid
