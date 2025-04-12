@@ -1,5 +1,6 @@
 // MUI
 import Typography from '@mui/material/Typography';
+
 // reactbits
 import RotatingText from '@/components/reactbits/RotatingText';
 
@@ -13,8 +14,10 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
     const { fixedText, rotatingText, className = '' } = props;
 
     return (
-        <div className={`flex w-full items-center justify-center gap-2 px-2 ${className}`}>
+        <div
+            className={`flex w-full items-center justify-center gap-2 px-2 ${className}`}>
             <Typography
+                component='div'
                 color='primary'
                 fontWeight='bold'
                 sx={{
@@ -29,6 +32,7 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
                 {fixedText}
             </Typography>
             <Typography
+                component='div'
                 color='primary'
                 fontWeight='bold'
                 sx={{
@@ -43,7 +47,7 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
                 <RotatingText
                     texts={rotatingText}
                     mainClassName='px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-1 justify-center rounded-lg transition-all duration-500 ease-in-out'
-                    style={{ transition: 'width 1s ease-in-out' }} 
+                    style={{ transition: 'width 1s ease-in-out' }}
                     // 幅の変化を滑らかにしたい
                     staggerFrom='last'
                     initial={{ y: '100%' }}
