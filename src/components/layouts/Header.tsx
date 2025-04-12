@@ -29,8 +29,7 @@ export const Header = () => {
                         <Link href={{ pathname: '/works' }}>works</Link>
                     </li>
                     <li>
-                        {' '}
-                        <Link href={{ pathname: '/blog' }}>blog</Link>
+                        <Link href={{ pathname: '/practice/01/' }}>Practice01</Link>
                     </li>
                 </ul>
                 <Stack spacing={1}>
