@@ -6,33 +6,20 @@ import { Template } from '@/components/layouts/Template';
 import { MediaCard } from '@/components/materials/MediaCaed';
 
 // types
-import { TWork } from '@/types/index';
+import { THome } from '@/types/index';
 
 type TemplateHomeProps = {
-    works: TWork[];
+    home: THome;
 };
 
 export const TemplateHome = (props: TemplateHomeProps) => {
-    const { works } = props;
+    const { home } = props;
     return (
         <Template>
-            Hello World!
-            <div className='container mx-auto py-[50px]'>
-                <h2 className='mb-5 text-[50px] font-bold'>Works</h2>
-                <Grid
-                    container
-                    spacing={2}>
-                    {works.map((work) => {
-                        return (
-                            <Grid
-                                key={work.id}
-                                size={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-                                <MediaCard work={work} />
-                            </Grid>
-                        );
-                    })}
-                </Grid>
-            </div>
+            <div>{home.title}</div>
+            <div>{home.main_image}</div>
+            <div>{home.sub_message}</div>
+            <div>{home.description}</div>
         </Template>
     );
 };
