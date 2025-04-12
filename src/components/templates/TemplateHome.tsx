@@ -1,12 +1,8 @@
-// MUI
-import Typography from '@mui/material/Typography';
-
 // components
 import { Template } from '@/components/layouts/Template';
 import { RotatingTitleMessage } from '@/components/materials/RotatingTitleMessage';
 
 // reactbits
-import RotatingText from '@/components/reactbits/RotatingText';
 import Ballpit from '@/components/reactbits/Ballpit';
 
 // types
