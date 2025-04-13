@@ -72,3 +72,14 @@ npm run test:cov
 
 - 2025.04.04 [Loading UI](https://zenn.dev/y_ta/articles/b1908ec6af6819)
 - 2025.04.08 [ライト・ダークモード]](https://qiita.com/KadoProG/items/15ceebf1aef774690bdf)
+
+## Practice01: Counter
+Next.js学習のためにカウンター機能を実装（`/practice/01`）
+- 1.0
+  - カウントの増減機能（+1、-1）を実装
+  - カウントに応じたメッセージ表示機能を追加
+- 1.1
+  - 単体テスト導入
+- 2.0
+  - タイトル編集機能を追加
+  - メッセージ表示のオン/オフ切り替え機能を実装
