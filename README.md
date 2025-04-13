@@ -58,6 +58,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # 以下のコマンドで実行（.prettierignoreで設定されたファイルは無視）
 npx prettier . --write
 ```
+- JEST
+  - [公式](https://jestjs.io/ja/)
+```bash
+# 以下のコマンドでテスト実行（設定はjest.config.tsに記載）
+npm run test
+# 以下のコマンドでテストカバレッジ表示
+npm run test:cov
+```
 
 ## 実装参考サイト
 
