@@ -3,7 +3,18 @@
 import React, { useState, useCallback, useRef, useMemo } from 'react';
 
 // MUI
-import { Box, Button, Typography, Popover } from '@mui/material';
+import {
+    Box,
+    Button,
+    Typography,
+    Popover,
+    TextField,
+    Switch,
+    FormControlLabel,
+    Tooltip,
+    IconButton,
+} from '@mui/material';
+import HelpIcon from '@mui/icons-material/Help';
 
 /** 今日の日付を取得（1〜31） */
 const getTodayDate = (): number => new Date().getDate();
@@ -13,7 +24,6 @@ const getCurrentAge = (): number => {
     // 月は0始まりなので7は8月
     const birthDate = new Date(1997, 7, 14);
     const today = new Date();
-
     let age = today.getFullYear() - birthDate.getFullYear();
 
     // 誕生日を迎えていない場合は年齢を1引く
@@ -59,24 +69,34 @@ const getMessageForCount = (count: number): string | null => {
 };
 
 export const Counter = () => {
+    const [title, setTitle] = useState('カウンター');
     const [count, setCount] = useState(0);
     const [message, setMessage] = useState<string | null>(null);
+    const [showMessage, setShowMessage] = useState(true); // 表示切り替え
 
     // 数値表示部分への参照（吹き出しの位置指定に使う）
     const countRef = useRef<HTMLSpanElement | null>(null);
 
-    const updateCount = useCallback((newCount: number) => {
-        setCount(newCount);
-        setMessage(getMessageForCount(newCount));
-    }, []);
+    const updateCount = useCallback(
+        (newCount: number) => {
+            setCount(newCount);
+            setMessage(showMessage ? getMessageForCount(newCount) : null);
+        },
+        [showMessage],
+    );
 
     const handleIncrement = () => updateCount(count + 1);
     const handleDecrement = () => updateCount(count - 1);
     const handleReset = () => updateCount(0);
 
+    const handleToggleMessage = () => {
+        setShowMessage((prev) => !prev);
+        setMessage(null); // トグル時にはポップオーバーを閉じる
+    };
+
     const popoverOpen = useMemo(
-        () => Boolean(countRef.current && message),
-        [message],
+        () => Boolean(countRef.current && message && showMessage),
+        [message, showMessage],
     );
 
     return (
@@ -100,11 +120,22 @@ export const Counter = () => {
                     </Typography>
                 </Box>
             </Popover>
+
+            <TextField
+                label='タイトル'
+                variant='outlined'
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                fullWidth
+                sx={{ maxWidth: 300 }}
+            />
+
             <Typography
                 variant='h4'
                 fontWeight='bold'>
                 <span ref={countRef}>{count}</span>
             </Typography>
+
             <Box
                 display='flex'
                 gap={2}>
@@ -119,12 +150,38 @@ export const Counter = () => {
                     ＋
                 </Button>
             </Box>
+
             <Button
                 variant='text'
                 color='secondary'
                 onClick={handleReset}>
                 RESET
             </Button>
+
+            <Box
+                display='flex'
+                alignItems='center'
+                >
+                <FormControlLabel
+                    control={
+                        <Switch
+                            checked={showMessage}
+                            onChange={handleToggleMessage}
+                            color='primary'
+                        />
+                    }
+                    label='Sattyモード'
+                    sx={{ marginRight: 0 }}
+                />
+                <Tooltip
+                    title={
+                        'カウントに応じたSattyからのメッセージ表示を切り替えます'
+                    }>
+                    <IconButton size='small'>
+                        <HelpIcon fontSize='small' />
+                    </IconButton>
+                </Tooltip>
+            </Box>
         </Box>
     );
 };
