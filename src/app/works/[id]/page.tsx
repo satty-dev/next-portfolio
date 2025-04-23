@@ -1,6 +1,6 @@
 // components
-import { ContentsWork } from '@/components/contents/ContentsWork';
+import { ContentsWorkItem } from '@/components/contents/ContentsWorkItem';
 
-export default async function WorkPage() {
-    return <ContentsWork />;
+export default async function WorkItemPage() {
+    return <ContentsWorkItem />;
 }

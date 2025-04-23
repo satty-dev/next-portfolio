@@ -8,12 +8,12 @@ import { MediaCard } from '@/components/materials/MediaCaed';
 // types
 import { TWork } from '@/types/index';
 
-type TemplateWorksProps = {
-    works: TWork[];
+type TemplateWorkListProps = {
+    workList: TWork[];
 };
 
-export const TemplateWorks = (props: TemplateWorksProps) => {
-    const { works } = props;
+export const TemplateWorkList = (props: TemplateWorkListProps) => {
+    const { workList } = props;
     return (
         <Template>
             <div className='container mx-auto py-[50px]'>
@@ -21,7 +21,7 @@ export const TemplateWorks = (props: TemplateWorksProps) => {
                 <Grid
                     container
                     spacing={2}>
-                    {works.map((work) => {
+                    {workList.map((work) => {
                         return (
                             <Grid
                                 key={work.id}
