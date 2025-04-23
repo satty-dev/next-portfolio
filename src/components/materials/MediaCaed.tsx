@@ -39,7 +39,11 @@ export const MediaCard = (props: MediaCardProps) => {
             </CardContent>
             <CardActions>
                 <Button size='small'>Share</Button>
-                <Button size='small'>Learn More</Button>
+                <Button
+                    size='small'
+                    href={`/works/${work.id}`}>
+                    Learn More
+                </Button>
             </CardActions>
         </Card>
     );
