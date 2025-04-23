@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 // components
 import { TemplateWorkItem } from '@/components/templates/TemplateWorkItem';
 
@@ -9,7 +11,8 @@ const getWorkData = async (id: string, waitTime: number) => {
     });
 
     if (!res.ok) {
-        throw new Error('Work not found');
+        console.log('Work not found');
+        return null;
     }
 
     const workData = await res.json();
@@ -22,6 +25,10 @@ type ContentsWorkDetailProps = {
 
 export const ContentsWorkItem = async ({ id }: ContentsWorkDetailProps) => {
     const workData = await getWorkData(id, 1000);
+
+    if (!workData) {
+        notFound();
+    }
 
     return <TemplateWorkItem work={workData} />;
 };
