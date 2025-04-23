@@ -5,5 +5,6 @@ import { WorkItemPageParams } from '@/types/index';
 import { ContentsWorkItem } from '@/components/contents/ContentsWorkItem';
 
 export default async function WorkItemPage({ params }: WorkItemPageParams) {
-    return <ContentsWorkItem id={params.id} />;
+    const p = await params;
+    return <ContentsWorkItem params={p} />;
 }
