@@ -1,21 +1,27 @@
 // components
-import { TemplateWorkList } from '@/components/templates/TemplateWorkList';
+import { TemplateWorkItem } from '@/components/templates/TemplateWorkItem';
 
-const getWorkItemData = async (waitTime: number) => {
-    //ルーディング画面がわかりやすくするために処理
+const getWorkData = async (id: string, waitTime: number) => {
     await new Promise((resolve) => setTimeout(resolve, waitTime));
 
-    const res = await fetch('http://localhost:3000/api/works', {
+    const res = await fetch(`http://localhost:3000/api/works/${id}`, {
         cache: 'no-store',
     });
 
-    const workItemData = await res.json();
+    if (!res.ok) {
+        throw new Error('Work not found');
+    }
 
-    return workItemData;
+    const workData = await res.json();
+    return workData;
 };
 
-export const ContentsWorkItem = async () => {
-    const workItemData = await getWorkItemData(1000);
+type ContentsWorkDetailProps = {
+    id: string;
+};
 
-    return <TemplateWorkList workList={workItemData} />;
+export const ContentsWorkItem = async ({ id }: ContentsWorkDetailProps) => {
+    const workData = await getWorkData(id, 1000);
+
+    return <TemplateWorkItem work={workData} />;
 };
