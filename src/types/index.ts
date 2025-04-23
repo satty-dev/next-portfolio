@@ -11,6 +11,12 @@ export interface THome {
     }
 }
 
+export type WorkItemPageParams = {
+    params: {
+        id: string;
+    };
+};
+
 export interface TWork {
     id: string;
     title: string;

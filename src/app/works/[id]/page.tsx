@@ -1,12 +1,9 @@
+// types
+import { WorkItemPageParams } from '@/types/index';
+
 // components
 import { ContentsWorkItem } from '@/components/contents/ContentsWorkItem';
 
-type Props = {
-    params: {
-        id: string;
-    };
-};
-
-export default async function WorkItemPage({ params }: Props) {
+export default async function WorkItemPage({ params }: WorkItemPageParams) {
     return <ContentsWorkItem id={params.id} />;
 }
