@@ -1,10 +1,11 @@
 import { notFound } from 'next/navigation';
 
-// types
-import { WorkItemPageParams } from '@/types/index';
-
 // components
 import { TemplateWorkItem } from '@/components/templates/TemplateWorkItem';
+
+type WorkItemPageParams = {
+    paramsId: string;
+};
 
 const getWorkData = async (id: string, waitTime: number) => {
     await new Promise((resolve) => setTimeout(resolve, waitTime));
@@ -22,8 +23,8 @@ const getWorkData = async (id: string, waitTime: number) => {
     return workData;
 };
 
-export const ContentsWorkItem = async ({ params }: WorkItemPageParams) => {
-    const workData = await getWorkData(params.id, 1000);
+export const ContentsWorkItem = async ({ paramsId }: WorkItemPageParams) => {
+    const workData = await getWorkData(paramsId, 1000);
 
     if (!workData) {
         notFound();

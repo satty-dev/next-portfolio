@@ -1,3 +1,9 @@
+export type Props = {
+    params: Promise<{
+        id: string;
+    }>;
+};
+
 export interface THome {
     title: string;
     main_message: string;
@@ -18,12 +24,6 @@ export interface TAbout {
     image: string;
     skills: string[];
 }
-
-export type WorkItemPageParams = {
-    params: {
-        id: string;
-    };
-};
 
 export interface TWork {
     id: string;
