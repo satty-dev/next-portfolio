@@ -26,6 +26,9 @@ export const Header = () => {
                         <Link href={{ pathname: '/' }}>Home</Link>
                     </li>
                     <li>
+                        <Link href={{ pathname: '/about' }}>about</Link>
+                    </li>
+                    <li>
                         <Link href={{ pathname: '/works' }}>works</Link>
                     </li>
                     <li>

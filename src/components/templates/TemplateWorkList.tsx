@@ -1,5 +1,5 @@
 // MUI
-import Grid from '@mui/material/Grid';
+import { Box, Grid, Typography } from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';
@@ -16,8 +16,12 @@ export const TemplateWorkList = (props: TemplateWorkListProps) => {
     const { workList } = props;
     return (
         <Template>
-            <div className='container mx-auto py-[50px]'>
-                <h2 className='mb-5 text-[50px] font-bold'>Works</h2>
+            <Box className='container mx-auto py-[50px]'>
+                <Typography
+                    variant='h2'
+                    gutterBottom>
+                    Works
+                </Typography>
                 <Grid
                     container
                     spacing={2}>
@@ -31,7 +35,7 @@ export const TemplateWorkList = (props: TemplateWorkListProps) => {
                         );
                     })}
                 </Grid>
-            </div>
+            </Box>
         </Template>
     );
 };
