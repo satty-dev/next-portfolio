@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
-// libs/data
-import { works } from '@/libs/data/works';
+// data
+import { works } from '@/data/works';
 
 // works一覧を取得
 export async function GET() {
