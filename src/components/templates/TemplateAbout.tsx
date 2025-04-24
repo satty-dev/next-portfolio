@@ -3,6 +3,7 @@ import { Avatar, Box, Chip, Stack, Typography } from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';
+import { PageTitle } from '@/components/materials/PageTitle';
 
 // types
 import { TAbout } from '@/types/index';
@@ -15,11 +16,7 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
     return (
         <Template>
             <Box className='container mx-auto py-[50px]'>
-                <Typography
-                    variant='h2'
-                    gutterBottom>
-                    About
-                </Typography>
+                <PageTitle title='About Me' />
                 <Typography
                     variant='h4'
                     gutterBottom

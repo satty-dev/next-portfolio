@@ -1,8 +1,9 @@
 // MUI
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';
+import { PageTitle } from '@/components/materials/PageTitle';
 import { MediaCard } from '@/components/materials/MediaCaed';
 
 // types
@@ -17,11 +18,7 @@ export const TemplateWorkList = (props: TemplateWorkListProps) => {
     return (
         <Template>
             <Box className='container mx-auto py-[50px]'>
-                <Typography
-                    variant='h2'
-                    gutterBottom>
-                    Works
-                </Typography>
+                <PageTitle title='Works' />
                 <Grid
                     container
                     spacing={2}>
