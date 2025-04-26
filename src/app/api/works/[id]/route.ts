@@ -1,14 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // data
-import { works } from '@/data/works';
+import { dataWorks } from '@/data/dataWorks';
 
 // idを基にworks詳細を取得
 export async function GET(req: NextRequest) {
     const url = new URL(req.url);
     const id = url.pathname.split('/').pop();
 
-    const work = works.find((w) => w.id === id);
+    const work = dataWorks.find((x) => x.id === id);
 
     if (!work) {
         return NextResponse.json({ message: 'Not Found' }, { status: 404 });

@@ -1,7 +1,7 @@
 // types
 import { TWork } from '@/types/index';
 
-export const works: TWork[] = [
+export const dataWorks: TWork[] = [
     {
         id: '1',
         title: 'タイトル1',
