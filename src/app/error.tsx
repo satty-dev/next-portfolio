@@ -31,10 +31,9 @@ export default function Error({ error, reset }: ErrorProps) {
             <Typography
                 variant='body2'
                 color='text.secondary'
+                textAlign='left'
                 gutterBottom>
-                {process.env.NODE_ENV === 'development' && (
-                    <pre className='mt-4 text-left'>{error.stack}</pre>
-                )}
+                {process.env.NODE_ENV === 'development' && error.stack}
             </Typography>
             <Button
                 variant='contained'
