@@ -1,34 +1,17 @@
-import { notFound } from 'next/navigation';
-
 // components
 import { TemplateWorkItem } from '@/components/templates/TemplateWorkItem';
+
+// types
+import { TWork } from '@/types/index';
+
+// services
+import { fetchJson } from '@/services/fetcher';
 
 type WorkItemPageParams = {
     paramsId: string;
 };
 
-const getWorkData = async (id: string, waitTime: number) => {
-    await new Promise((resolve) => setTimeout(resolve, waitTime));
-
-    const res = await fetch(`http://localhost:3000/api/works/${id}`, {
-        cache: 'no-store',
-    });
-
-    if (!res.ok) {
-        console.log('Work not found');
-        return null;
-    }
-
-    const workData = await res.json();
-    return workData;
-};
-
 export const ContentsWorkItem = async ({ paramsId }: WorkItemPageParams) => {
-    const workData = await getWorkData(paramsId, 1000);
-
-    if (!workData) {
-        notFound();
-    }
-
+    const workData = await fetchJson<TWork>(`/works/${paramsId}`);
     return <TemplateWorkItem work={workData} />;
 };

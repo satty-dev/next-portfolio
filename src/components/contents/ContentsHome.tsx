@@ -1,21 +1,13 @@
 // components
 import { TemplateHome } from '@/components/templates/TemplateHome';
 
-const getHomeData = async (waitTime: number) => {
-    //ルーディング画面がわかりやすくするために処理
-    await new Promise((resolve) => setTimeout(resolve, waitTime));
+// types
+import { THome } from '@/types/index';
 
-    const res = await fetch('http://localhost:3000/api/home', {
-        cache: 'no-store',
-    });
-
-    const HomeData = await res.json();
-
-    return HomeData;
-};
+// services
+import { fetchJson } from '@/services/fetcher';
 
 export const ContentsHome = async () => {
-    const homeData = await getHomeData(1000);
-
+    const homeData = await fetchJson<THome>(`/home`);
     return <TemplateHome home={homeData} />;
 };

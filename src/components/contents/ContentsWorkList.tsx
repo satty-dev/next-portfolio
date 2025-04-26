@@ -1,21 +1,13 @@
 // components
 import { TemplateWorkList } from '@/components/templates/TemplateWorkList';
 
-const getWorkListData = async (waitTime: number) => {
-    //ルーディング画面がわかりやすくするために処理
-    await new Promise((resolve) => setTimeout(resolve, waitTime));
+// types
+import { TWork } from '@/types/index';
 
-    const res = await fetch('http://localhost:3000/api/works', {
-        cache: 'no-store',
-    });
-
-    const workListData = await res.json();
-
-    return workListData;
-};
+// services
+import { fetchJson } from '@/services/fetcher';
 
 export const ContentsWorkList = async () => {
-    const workListData = await getWorkListData(1000);
-
+    const workListData = await fetchJson<TWork[]>(`/works`);
     return <TemplateWorkList workList={workListData} />;
 };
