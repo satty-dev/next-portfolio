@@ -5,9 +5,9 @@ import { TemplateWorkList } from '@/components/templates/TemplateWorkList';
 import { TWork } from '@/types/index';
 
 // services
-import { fetchJson } from '@/services/fetcher';
+import { fetchApiFromServer } from '@/services/headers';
 
 export const ContentsWorkList = async () => {
-    const workListData = await fetchJson<TWork[]>(`/works`);
+    const workListData = await fetchApiFromServer<TWork[]>(`/works`);
     return <TemplateWorkList workList={workListData} />;
 };

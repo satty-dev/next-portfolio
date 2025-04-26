@@ -5,9 +5,9 @@ import { TemplateHome } from '@/components/templates/TemplateHome';
 import { THome } from '@/types/index';
 
 // services
-import { fetchJson } from '@/services/fetcher';
+import { fetchApiFromServer } from '@/services/headers';
 
 export const ContentsHome = async () => {
-    const homeData = await fetchJson<THome>(`/home`);
+    const homeData = await fetchApiFromServer<THome>(`/home`);
     return <TemplateHome home={homeData} />;
 };

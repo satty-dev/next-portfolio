@@ -5,9 +5,9 @@ import { TemplateAbout } from '@/components/templates/TemplateAbout';
 import { TAbout } from '@/types/index';
 
 // services
-import { fetchJson } from '@/services/fetcher';
+import { fetchApiFromServer } from '@/services/headers';
 
 export const ContentsAbout = async () => {
-    const aboutData = await fetchJson<TAbout>(`/about`);
+    const aboutData = await fetchApiFromServer<TAbout>(`/about`);
     return <TemplateAbout about={aboutData} />;
 };

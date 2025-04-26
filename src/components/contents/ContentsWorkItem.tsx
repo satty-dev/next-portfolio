@@ -5,13 +5,13 @@ import { TemplateWorkItem } from '@/components/templates/TemplateWorkItem';
 import { TWork } from '@/types/index';
 
 // services
-import { fetchJson } from '@/services/fetcher';
+import { fetchApiFromServer } from '@/services/headers';
 
 type WorkItemPageParams = {
     paramsId: string;
 };
 
 export const ContentsWorkItem = async ({ paramsId }: WorkItemPageParams) => {
-    const workData = await fetchJson<TWork>(`/works/${paramsId}`);
+    const workData = await fetchApiFromServer<TWork>(`/works/${paramsId}`);
     return <TemplateWorkItem work={workData} />;
 };
