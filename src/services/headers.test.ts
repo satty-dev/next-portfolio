@@ -19,23 +19,25 @@ describe('fetchApiFromServerのテスト', () => {
         (headers as jest.Mock).mockImplementation(() => mockHeaders);
     });
 
-    test('ホストヘッダーが存在する場合、fetchJsonを呼び出して正しくデータを返す', async () => {
-        mockHeaders.set('host', 'localhost:3000');
+    test('x-urlヘッダーが存在する場合、正しくAPI URLを組み立ててfetchJsonを呼び出す', async () => {
+        mockHeaders.set('x-url', 'http://localhost:3000/sample');
 
         const mockData = { message: '成功' };
         (fetchJson as jest.Mock).mockResolvedValue(mockData);
 
         const result = await fetchApiFromServer<{ message: string }>('/home');
 
-        expect(fetchJson).toHaveBeenCalledWith('localhost:3000', '/home');
+        expect(fetchJson).toHaveBeenCalledWith(
+            'http://localhost:3000/api/home',
+        );
         expect(result).toEqual(mockData);
     });
 
-    test('ホストヘッダーが存在しない場合、エラーをスローする', async () => {
-        mockHeaders.delete('host');
+    test('x-urlヘッダーが存在しない場合、エラーをスローする', async () => {
+        mockHeaders.delete('x-url');
 
         await expect(fetchApiFromServer('/home')).rejects.toThrow(
-            'Host header not found.',
+            'x-url header is missing.',
         );
         expect(fetchJson).not.toHaveBeenCalled();
     });

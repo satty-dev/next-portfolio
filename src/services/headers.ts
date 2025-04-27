@@ -4,20 +4,23 @@ import { headers } from 'next/headers';
 import { fetchJson } from '@/services/fetcher';
 
 /**
- * サーバーコンポーネント内で、現在のリクエストヘッダーからホスト情報を取得し、
+ * サーバーコンポーネント内で、現在のリクエストヘッダーからURL情報を取得し、
  * 指定されたAPIエンドポイントに対してデータフェッチを行う関数
  *
  * @param endpoint - APIのエンドポイント（例: '/home'）
  * @returns 指定型<T>のデータ
- * @throws ホスト情報が取得できなかった場合にエラーをスロー
  */
 export const fetchApiFromServer = async <T>(endpoint: string): Promise<T> => {
     const headersList = await headers();
-    const host = headersList.get('host');
 
-    if (!host) {
-        throw new Error('Host header not found.');
+    // x-url：middleware.tsで設定。現在のURLを取得する。
+    const currentUrl = headersList.get('x-url');
+    if (!currentUrl) {
+        throw new Error('x-url header is missing.');
     }
 
-    return fetchJson<T>(host, endpoint);
+    const baseUrl = new URL(currentUrl).origin;
+    const apiUrl = `${baseUrl}/api${endpoint}`;
+
+    return fetchJson<T>(apiUrl);
 };

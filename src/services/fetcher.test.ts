@@ -29,10 +29,9 @@ describe('fetchJsonのテスト', () => {
         });
 
         const promise = fetchJson<{ message: string }>(
-            'localhost:3000',
-            '/home',
+            'http://localhost:3000/api/home',
         );
-        jest.runAllTimers(); // setTimeoutを早送り
+        jest.runAllTimers();
 
         const result = await promise;
 
@@ -50,10 +49,10 @@ describe('fetchJsonのテスト', () => {
             json: async () => ({}),
         });
 
-        const promise = fetchJson('localhost:3000', '/notfound');
+        const promise = fetchJson('http://localhost:3000/api/notfound');
         jest.runAllTimers();
 
-        await promise; // awaitしてもエラーは発生しない仕様
+        await promise; // 404エラー時もrejectしない仕様
 
         expect(notFound).toHaveBeenCalled();
     });
@@ -65,7 +64,7 @@ describe('fetchJsonのテスト', () => {
             json: async () => ({}),
         });
 
-        const promise = fetchJson('localhost:3000', '/server-error');
+        const promise = fetchJson('http://localhost:3000/api/server-error');
         jest.runAllTimers();
 
         await expect(promise).rejects.toThrow('Failed to fetch data.');
