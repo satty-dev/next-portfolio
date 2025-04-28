@@ -1,5 +1,5 @@
 // MUI
-import Typography from '@mui/material/Typography';
+import { Box, Typography } from '@mui/material';
 
 // reactbits
 import RotatingText from '@/components/reactbits/RotatingText';
@@ -14,18 +14,28 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
     const { fixedText, rotatingText, className = '' } = props;
 
     return (
-        <div
-            className={`flex w-full items-center justify-center gap-2 px-2 ${className}`}>
+        <Box
+            sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: {
+                    xs: 'center',
+                    md: 'flex-start',
+                },
+                gap: 2,
+                width: '100%',
+            }}
+            className={className}>
             <Typography
                 component='div'
                 color='primary'
                 fontWeight='bold'
                 sx={{
                     fontSize: {
-                        xs: '2rem',
-                        sm: '3rem',
-                        md: '4rem',
-                        lg: '5rem',
+                        xs: '2.6rem',
+                        sm: '4rem',
+                        md: '3.4rem',
+                        lg: '4rem',
                     },
                 }}
                 className='text-primary text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl'>
@@ -37,10 +47,10 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
                 fontWeight='bold'
                 sx={{
                     fontSize: {
-                        xs: '2rem',
-                        sm: '3rem',
-                        md: '4rem',
-                        lg: '5rem',
+                        xs: '2.6rem',
+                        sm: '4rem',
+                        md: '3.4rem',
+                        lg: '4rem',
                     },
                 }}
                 className='text-primary font-mono text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl'>
@@ -63,6 +73,6 @@ export const RotatingTitleMessage = (props: RotatingTitleMessageProps) => {
                     rotationInterval={2000}
                 />
             </Typography>
-        </div>
+        </Box>
     );
 };
