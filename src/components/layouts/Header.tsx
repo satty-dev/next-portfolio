@@ -64,16 +64,24 @@ export const Header = () => {
                         px: { xs: 2, sm: 4 },
                     }}>
                     {/* Logo */}
-                    <Typography
-                        variant='h6'
-                        component='div'
-                        sx={{
-                            fontWeight: 'bold',
-                            color: theme.palette.primary.main,
-                            letterSpacing: 1.2,
-                        }}>
-                        MyPortfolio
-                    </Typography>
+                    <Link
+                        href='/'
+                        passHref>
+                        <Typography
+                            variant='h6'
+                            component='div'
+                            sx={{
+                                fontWeight: 'bold',
+                                color: theme.palette.primary.main,
+                                letterSpacing: 1.2,
+                                textDecoration: 'none',
+                                '&:hover': {
+                                    opacity: 0.8,
+                                },
+                            }}>
+                            MyPortfolio
+                        </Typography>
+                    </Link>
 
                     {isMobile ? (
                         <IconButton
