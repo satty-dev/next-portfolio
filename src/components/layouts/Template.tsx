@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 
 // components
 import { Header } from '@/components/layouts/Header';
+import { Footer } from '@/components/layouts/Footer'; 
 
 type Template = {
     children: React.ReactNode;
@@ -17,7 +18,7 @@ export const Template = (props: Template) => {
             <Container maxWidth='lg'>
                 <main>{children}</main>
             </Container>
-            <footer></footer>
+            <Footer />
         </div>
     );
 };
