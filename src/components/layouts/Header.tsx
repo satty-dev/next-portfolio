@@ -213,14 +213,12 @@ export const Header = () => {
                     onClick={toggleDrawer(false)}>
                     <List>
                         {navItems.map(({ href, label }) => (
-                            <Link
+                            <ListItemButton
                                 key={href}
-                                href={href}
-                                passHref>
-                                <ListItemButton component='a'>
-                                    <ListItemText primary={label} />
-                                </ListItemButton>
-                            </Link>
+                                component={Link}
+                                href='href'>
+                                <ListItemText primary={label} />
+                            </ListItemButton>
                         ))}
                     </List>
                     <Divider sx={{ my: 1 }} />
