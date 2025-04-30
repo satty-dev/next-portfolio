@@ -42,17 +42,6 @@ export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
                             gutterBottom>
                             {work.description}
                         </Typography>
-                        {work.link && (
-                            <Button
-                                variant='contained'
-                                color='primary'
-                                href={work.link}
-                                target='_blank'
-                                rel='noopener'
-                                sx={{ mt: 2 }}>
-                                詳細を見る
-                            </Button>
-                        )}
                     </CardContent>
                 </Card>
             </Box>

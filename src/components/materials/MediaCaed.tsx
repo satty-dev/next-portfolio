@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Link from 'next/link';
 
 // MUI
 import Card from '@mui/material/Card';
@@ -40,8 +41,9 @@ export const MediaCard = (props: MediaCardProps) => {
             <CardActions>
                 <Button size='small'>Share</Button>
                 <Button
-                    size='small'
-                    href={`/works/${work.id}`}>
+                    component={Link}
+                    href={`/works/${work.id}`}
+                    size='small'>
                     Learn More
                 </Button>
             </CardActions>
