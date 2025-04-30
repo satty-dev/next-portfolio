@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 // data
-import { dataWorks } from '@/data/dataWorks';
+import { dataWorks } from '@/data/contents/dataWorks';
 
 // idを基にworks詳細を取得
 export async function GET(req: NextRequest) {
