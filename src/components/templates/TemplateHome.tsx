@@ -56,6 +56,7 @@ export const TemplateHome = (props: TemplateHomeProps) => {
                                 height: 'auto',
                                 borderRadius: '8px',
                             }}
+                            loading='eager'
                         />
                     </Box>
 
