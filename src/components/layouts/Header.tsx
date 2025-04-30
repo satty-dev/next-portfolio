@@ -79,7 +79,7 @@ export const Header = () => {
                                     opacity: 0.8,
                                 },
                             }}>
-                            MyPortfolio
+                            Satty Portfolio
                         </Typography>
                     </Link>
 

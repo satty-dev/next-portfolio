@@ -20,7 +20,7 @@ export const Footer = () => {
                     variant='body2'
                     color='text.secondary'
                     align='center'>
-                    © {new Date().getFullYear()} MyPortfolio. All rights
+                    © {new Date().getFullYear()} Satty Portfolio. All rights
                     reserved.
                 </Typography>
             </Container>
