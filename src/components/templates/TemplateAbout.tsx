@@ -1,5 +1,16 @@
 // MUI
-import { Avatar, Box, Chip, Stack, Typography } from '@mui/material';
+import {
+    Avatar,
+    Box,
+    Chip,
+    Stack,
+    Typography,
+    Divider,
+    Card,
+    CardContent,
+    Link,
+    Grid,
+} from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';
@@ -13,52 +24,294 @@ type TemplateAboutProps = {
 };
 
 export const TemplateAbout = ({ about }: TemplateAboutProps) => {
+    // historiesをtypeでグループ分け
+    const educations = about.histories.filter((h) => h.type === 'education');
+    const careers = about.histories.filter((h) => h.type === 'career');
+
     return (
         <Template>
             <Box className='container mx-auto py-[50px]'>
                 <PageTitle title='About Me' />
                 <Typography
-                    variant='h4'
-                    gutterBottom
-                    fontWeight='bold'>
+                    variant='h3'
+                    gutterBottom>
                     {about.main_message}
                 </Typography>
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 3,
-                        mb: 4,
-                    }}>
-                    <Avatar
-                        alt={about.name}
-                        src={about.image}
-                        sx={{ width: 100, height: 100 }}
-                    />
-                    <Box>
-                        <Typography variant='h6'>{about.name}</Typography>
-                        <Typography variant='body1'>{about.bio}</Typography>
+                {/* 写真＋プロフィール */}
+                <Stack
+                    direction={{ xs: 'column', md: 'row' }}
+                    alignItems='stretch'
+                    spacing={0}
+                    mb={4}
+                    sx={{ width: '100%' }}>
+                    {/* 写真：1/3（PC） */}
+                    <Box
+                        sx={{
+                            flex: { xs: '1', md: '1' },
+                            width: { xs: '100%', md: '100%' },
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'flex-start',
+                            px: 0,
+                            py: 2,
+                        }}>
+                        <Box
+                            sx={{
+                                width: { xs: '100%', md: '100%' },
+                                aspectRatio: '3 / 4',
+                                minWidth: 120,
+                                minHeight: 160,
+                                bgcolor: '#eee',
+                                borderRadius: 2,
+                                overflow: 'hidden',
+                                boxShadow: 2,
+                                display: 'flex',
+                            }}>
+                            <Avatar
+                                alt={about.name}
+                                src={about.images.photo}
+                                variant='square'
+                                sx={{
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    borderRadius: 2,
+                                }}
+                            />
+                        </Box>
                     </Box>
+
+                    {/* プロフィール＋Skills＋Education＋Career：2/3（PC） */}
+                    <Box
+                        sx={{
+                            flex: { xs: '1', md: '2' },
+                            width: { xs: '100%', md: '100%' },
+                            p: 0,
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'flex-start',
+                        }}>
+                        <Box sx={{ px: { xs: 0, md: 4 }, py: 2 }}>
+                            {/* プロフィール */}
+                            <Typography
+                                variant='h4'
+                                fontWeight={'bold'}>
+                                {about.name}
+                            </Typography>
+                            <Typography
+                                variant='h5'
+                                color='text.secondary'
+                                gutterBottom>
+                                {about.job}
+                            </Typography>
+                            <Typography
+                                variant='body1'
+                                mb={2}>
+                                {about.bio}
+                            </Typography>
+
+                            {/* Skills */}
+                            <Typography
+                                variant='h6'
+                                gutterBottom>
+                                Skills
+                            </Typography>
+                            <Stack
+                                direction='row'
+                                spacing={1}
+                                flexWrap='wrap'
+                                mb={2}>
+                                {about.skills.map((skill) => (
+                                    <Chip
+                                        key={skill}
+                                        label={skill}
+                                        color='primary'
+                                    />
+                                ))}
+                            </Stack>
+
+                            {/* Education */}
+                            <Typography
+                                variant='h6'
+                                gutterBottom>
+                                Education
+                            </Typography>
+                            <Stack
+                                spacing={1}
+                                mb={2}>
+                                {educations.map((edu, idx) => (
+                                    <Box
+                                        key={idx}
+                                        display='flex'
+                                        alignItems='flex-start'>
+                                        <Box minWidth={120}>
+                                            <Typography
+                                                variant='subtitle1'
+                                                fontWeight='bold'
+                                                color='primary'>
+                                                {edu.period}
+                                            </Typography>
+                                        </Box>
+                                        <Box>
+                                            <Typography
+                                                variant='subtitle1'
+                                                fontWeight='bold'>
+                                                {edu.organization}
+                                            </Typography>
+                                            <Typography variant='body2'>
+                                                {edu.title}
+                                            </Typography>
+                                        </Box>
+                                    </Box>
+                                ))}
+                            </Stack>
+
+                            {/* Career */}
+                            <Typography
+                                variant='h6'
+                                gutterBottom>
+                                Career
+                            </Typography>
+                            <Stack
+                                spacing={1}
+                                mb={2}>
+                                {careers.map((career, idx) => (
+                                    <Box
+                                        key={idx}
+                                        display='flex'
+                                        alignItems='flex-start'>
+                                        <Box minWidth={120}>
+                                            <Typography
+                                                variant='subtitle1'
+                                                fontWeight='bold'
+                                                color='primary'>
+                                                {career.period}
+                                            </Typography>
+                                        </Box>
+                                        <Box>
+                                            <Typography
+                                                variant='subtitle1'
+                                                fontWeight='bold'>
+                                                {career.organization}
+                                            </Typography>
+                                            <Typography variant='body2'>
+                                                {career.title}
+                                            </Typography>
+                                            {career.description && (
+                                                <Typography
+                                                    variant='body2'
+                                                    color='text.secondary'>
+                                                    {career.description}
+                                                </Typography>
+                                            )}
+                                        </Box>
+                                    </Box>
+                                ))}
+                            </Stack>
+                        </Box>
+                    </Box>
+                </Stack>
+
+                <Divider sx={{ my: 4 }} />
+
+                {/* Certifications */}
+                <Box mb={4}>
+                    <Typography
+                        variant='h6'
+                        gutterBottom>
+                        Certifications
+                    </Typography>
+                    <Grid
+                        container
+                        spacing={2}>
+                        {about.certifications.map((cert, idx) => (
+                            <Grid
+                                size={{ xs: 12, sm: 6 }}
+                                key={idx}>
+                                <Card variant='outlined'>
+                                    <CardContent>
+                                        <Typography
+                                            variant='subtitle1'
+                                            fontWeight='bold'>
+                                            {cert.name}
+                                        </Typography>
+                                        <Typography variant='body2'>
+                                            {cert.organization} ({cert.period})
+                                        </Typography>
+                                        {cert.description && (
+                                            <Typography
+                                                variant='body2'
+                                                color='text.secondary'>
+                                                {cert.description}
+                                            </Typography>
+                                        )}
+                                        {cert.link && (
+                                            <Typography variant='body2'>
+                                                <Link
+                                                    href={cert.link}
+                                                    target='_blank'
+                                                    rel='noopener'
+                                                    underline='hover'>
+                                                    View Certificate
+                                                </Link>
+                                            </Typography>
+                                        )}
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
                 </Box>
 
-                <Typography
-                    variant='h6'
-                    gutterBottom>
-                    Skills
-                </Typography>
-                <Stack
-                    direction='row'
-                    spacing={1}
-                    flexWrap='wrap'>
-                    {about.skills.map((skill) => (
-                        <Chip
-                            key={skill}
-                            label={skill}
-                            color='primary'
-                        />
-                    ))}
-                </Stack>
+                {/* Researches */}
+                <Box mb={4}>
+                    <Typography
+                        variant='h6'
+                        gutterBottom>
+                        Researches
+                    </Typography>
+                    <Grid
+                        container
+                        spacing={2}>
+                        {about.researches.map((res, idx) => (
+                            <Grid
+                                size={{ xs: 12, sm: 6 }}
+                                key={idx}>
+                                <Card variant='outlined'>
+                                    <CardContent>
+                                        <Typography
+                                            variant='subtitle1'
+                                            fontWeight='bold'>
+                                            {res.title}
+                                        </Typography>
+                                        <Typography variant='body2'>
+                                            {res.organization} ({res.period})
+                                        </Typography>
+                                        {res.description && (
+                                            <Typography
+                                                variant='body2'
+                                                color='text.secondary'>
+                                                {res.description}
+                                            </Typography>
+                                        )}
+                                        {res.link && (
+                                            <Typography variant='body2'>
+                                                <Link
+                                                    href={res.link}
+                                                    target='_blank'
+                                                    rel='noopener'
+                                                    underline='hover'>
+                                                    View Publication
+                                                </Link>
+                                            </Typography>
+                                        )}
+                                    </CardContent>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Box>
             </Box>
         </Template>
     );

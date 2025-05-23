@@ -17,12 +17,45 @@ export interface THome {
     };
 }
 
-export interface TAbout {
+export interface testTAbout {
     main_message: string;
     name: string;
     bio: string;
     image: string;
     skills: string[];
+}
+
+export interface TAbout {
+    main_message: string;
+    name: string;
+    job: string;
+    bio: string;
+    images: {
+        photo: string;
+        illust: string;
+    };
+    skills: string[];
+    histories: {
+        type: 'education' | 'career';
+        organization: string;
+        title: string;
+        period: string;
+        description?: string;
+    }[];
+    certifications: {
+        name: string;
+        organization: string;
+        period: string;
+        description?: string;
+        link?: string;
+    }[];
+    researches: {
+        title: string;
+        organization: string;
+        period: string;
+        description?: string;
+        link?: string;
+    }[];
 }
 
 export interface TWork {
