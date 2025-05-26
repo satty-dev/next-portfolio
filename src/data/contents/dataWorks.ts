@@ -7,6 +7,7 @@ export const dataWorks: TWork[] = [
         title: 'Title 1',
         description: 'A concise description of the work.',
         image: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        skills: ['Figma', 'React', 'TypeScript', 'MUI'],
         link: '',
     },
     {
@@ -14,6 +15,7 @@ export const dataWorks: TWork[] = [
         title: 'Title 2',
         description: 'A concise description of the work.',
         image: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        skills: ['Figma', 'React', 'TypeScript', 'MUI'],
         link: '',
     },
     {
@@ -21,6 +23,7 @@ export const dataWorks: TWork[] = [
         title: 'Title 3',
         description: 'A concise description of the work.',
         image: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        skills: ['Figma', 'React', 'TypeScript', 'MUI'],
         link: '',
     },
     {
@@ -28,6 +31,7 @@ export const dataWorks: TWork[] = [
         title: 'Title 4',
         description: 'A concise description of the work.',
         image: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        skills: ['Figma', 'React', 'TypeScript', 'MUI'],
         link: '',
     },
     {
@@ -35,6 +39,7 @@ export const dataWorks: TWork[] = [
         title: 'Title 5',
         description: 'A concise description of the work.',
         image: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        skills: ['Figma', 'React', 'TypeScript', 'MUI'],
         link: '',
     },
 ];

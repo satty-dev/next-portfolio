@@ -2,11 +2,15 @@ import * as React from 'react';
 import Link from 'next/link';
 
 // MUI
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
+import {
+    Card,
+    CardActionArea,
+    CardContent,
+    CardMedia,
+    Chip,
+    Stack,
+    Typography,
+} from '@mui/material';
 
 // types
 import { TWork } from '@/types/index';
@@ -33,22 +37,46 @@ export const MediaCard = (props: MediaCardProps) => {
                 legacyBehavior>
                 <CardActionArea component='a'>
                     <CardMedia
-                        sx={{ height: 140 }}
+                        sx={{
+                            height: 180,
+                            objectFit: 'cover',
+                            objectPosition: 'center',
+                        }}
                         image={work.image}
                         title={work.title}
                     />
-                    <CardContent>
+                    <CardContent
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 1,
+                        }}>
                         <Typography
                             gutterBottom
-                            variant='h5'
+                            variant='h6'
                             component='div'>
                             {work.title}
                         </Typography>
                         <Typography
                             variant='body2'
-                            sx={{ color: 'text.secondary' }}>
+                            color='text.secondary'>
                             {work.description}
                         </Typography>
+                        <Stack
+                            direction='row'
+                            spacing={1}
+                            useFlexGap
+                            flexWrap='wrap'
+                            sx={{ mt: 1 }}>
+                            {work.skills.map((skill) => (
+                                <Chip
+                                    key={skill}
+                                    label={skill}
+                                    size='small'
+                                    color='primary'
+                                />
+                            ))}
+                        </Stack>
                     </CardContent>
                 </CardActionArea>
             </Link>

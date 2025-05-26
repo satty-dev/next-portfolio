@@ -4,7 +4,8 @@ import {
     Typography,
     Card,
     CardMedia,
-    CardContent,
+    Stack,
+    Chip,
 } from '@mui/material';
 
 // components
@@ -20,29 +21,70 @@ type TemplateWorkItemProps = {
 export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
-                <Typography
-                    variant='h3'
-                    fontWeight='bold'
-                    gutterBottom>
-                    {work.title}
-                </Typography>
+            <Box className='container mx-auto px-4 py-[50px]'>
+                <Box sx={{ maxWidth: 800, margin: '0 auto' }}>
+                    <Typography
+                        variant='h3'
+                        fontWeight='bold'
+                        gutterBottom>
+                        {work.title}
+                    </Typography>
 
-                <Card>
-                    <CardMedia
-                        component='img'
-                        height='300'
-                        image={work.image}
-                        alt={work.title}
-                    />
-                    <CardContent>
+                    <Card elevation={3}>
+                        {/* アスペクト比16:9で画像を表示 */}
+                        <Box
+                            sx={{
+                                position: 'relative',
+                                width: '100%',
+                                pt: '56.25%', // 16:9 = 9 / 16 * 100
+                            }}>
+                            <CardMedia
+                                component='img'
+                                image={work.image}
+                                alt={work.title}
+                                sx={{
+                                    position: 'absolute',
+                                    top: 0,
+                                    left: 0,
+                                    width: '100%',
+                                    height: '100%',
+                                    objectFit: 'cover',
+                                    objectPosition: 'center',
+                                }}
+                            />
+                        </Box>
+                    </Card>
+                    <Box
+                        className='py-4'
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: 2,
+                        }}>
+                        {work.skills?.length > 0 && (
+                            <Stack
+                                direction='row'
+                                spacing={1}
+                                useFlexGap
+                                flexWrap='wrap'>
+                                {work.skills.map((skill) => (
+                                    <Chip
+                                        key={skill}
+                                        label={skill}
+                                        size='small'
+                                        color='primary'
+                                    />
+                                ))}
+                            </Stack>
+                        )}
+
                         <Typography
                             variant='body1'
-                            gutterBottom>
+                            color='text.secondary'>
                             {work.description}
                         </Typography>
-                    </CardContent>
-                </Card>
+                    </Box>
+                </Box>
             </Box>
         </Template>
     );
