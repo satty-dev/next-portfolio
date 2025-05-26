@@ -14,8 +14,8 @@ import { ThemeRegistry } from '@/libs/theme/ThemeRegistry';
 export const metadata: Metadata = {
     title: 'Satty Portfolio',
     description:
-        'Sattyのポートフォリオサイト。UI/UXデザイン、Webデザイン、グラフィック制作の実績をご紹介します。',
-    keywords: ['デザイナー', 'ポートフォリオ', 'UI/UX', 'Webデザイン', 'Satty'],
+        "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
+    keywords: ['Designer', 'Portfolio', 'UI/UX', 'Web Design', 'Satty'],
     authors: [{ name: 'Satty' }],
 };
 
@@ -25,7 +25,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang='ja'>
+        <html lang='en'>
             <body className={`antialiased`}>
                 <AppRouterCacheProvider>
                     <ThemeRegistry>{children}</ThemeRegistry>
