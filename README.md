@@ -35,6 +35,7 @@ npm run test:cov
 
 - 2025.04.04 [Loading UI](https://zenn.dev/y_ta/articles/b1908ec6af6819)
 - 2025.04.08 [ライト・ダークモード]](https://qiita.com/KadoProG/items/15ceebf1aef774690bdf)
+- 2025.05.27 [GA導入方法](https://webtech-media.jp/article/nextjs-14-app-router-google-analytics/)
 
 ## Practice01: Counter
 Next.js学習のためにカウンター機能を実装（`/practice/01`）

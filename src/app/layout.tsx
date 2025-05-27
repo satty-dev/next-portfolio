@@ -10,6 +10,7 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 
 // libs
 import { ThemeRegistry } from '@/libs/theme/ThemeRegistry';
+import { GoogleAnalytics } from '@/libs/analytics/GoogleAnalytics';
 
 export const metadata: Metadata = {
     title: 'Satty Portfolio',
@@ -30,6 +31,7 @@ export default function RootLayout({
                 <AppRouterCacheProvider>
                     <ThemeRegistry>{children}</ThemeRegistry>
                 </AppRouterCacheProvider>
+                <GoogleAnalytics />
             </body>
         </html>
     );
