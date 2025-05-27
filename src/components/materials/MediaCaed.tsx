@@ -60,7 +60,7 @@ export const MediaCard = (props: MediaCardProps) => {
                         <Typography
                             variant='body2'
                             color='text.secondary'>
-                            {work.description}
+                            {work.summary}
                         </Typography>
                         <Stack
                             direction='row'
