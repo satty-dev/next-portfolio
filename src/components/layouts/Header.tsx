@@ -41,6 +41,24 @@ const navItems = [
     { href: '/practice/01', label: 'Practice' },
 ];
 
+const snsLinks = [
+    {
+        label: 'Twitter',
+        icon: <FaTwitter size={20} />,
+        href: 'https://x.com/i_am_satty',
+    },
+    {
+        label: 'LinkedIn',
+        icon: <FaLinkedin size={20} />,
+        href: 'https://www.linkedin.com/in/iamsatty/',
+    },
+    {
+        label: 'GitHub',
+        icon: <FaGithub size={20} />,
+        href: 'https://github.com/satty-dev',
+    },
+];
+
 export const Header = () => {
     const { toggleColorMode, selectedMode } = useColorModeContext();
     const theme = useTheme();
@@ -123,36 +141,20 @@ export const Header = () => {
                             <Stack
                                 direction='row'
                                 spacing={1}>
-                                <Tooltip title='Twitter'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://x.com/i_am_satty'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaTwitter size={20} />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title='LinkedIn'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://www.linkedin.com/in/iamsatty/'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaLinkedin size={20} />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title='GitHub'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://github.com/satty-dev'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaGithub size={20} />
-                                    </IconButton>
-                                </Tooltip>
+                                {snsLinks.map(({ label, icon, href }) => (
+                                    <Tooltip
+                                        key={label}
+                                        title={label}>
+                                        <IconButton
+                                            component='a'
+                                            href={href}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            color='inherit'>
+                                            {icon}
+                                        </IconButton>
+                                    </Tooltip>
+                                ))}
                             </Stack>
 
                             {/* Theme Toggle */}
@@ -234,30 +236,17 @@ export const Header = () => {
                         direction='row'
                         spacing={1}
                         justifyContent='center'>
-                        <IconButton
-                            component='a'
-                            href='https://x.com/i_am_satty'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaTwitter />
-                        </IconButton>
-                        <IconButton
-                            component='a'
-                            href='https://www.linkedin.com/in/iamsatty/'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaLinkedin />
-                        </IconButton>
-                        <IconButton
-                            component='a'
-                            href='https://github.com/satty-dev'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaGithub />
-                        </IconButton>
+                        {snsLinks.map(({ label, icon, href }) => (
+                            <IconButton
+                                key={label}
+                                component='a'
+                                href={href}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                color='inherit'>
+                                {icon}
+                            </IconButton>
+                        ))}
                     </Stack>
                     <Divider sx={{ my: 1 }} />
                     <Stack
