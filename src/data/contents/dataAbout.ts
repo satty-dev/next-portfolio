@@ -6,6 +6,7 @@ export const dataAbout: TAbout = {
     name: 'Sadahiro Suzuki (Satty)',
     job: 'UX Engineer',
     bio: 'I am committed to user-centered UX design and development. I continuously learn new technologies and methodologies to pursue better user experiences.',
+    location: 'Tokyo, Japan',
     images: {
         photo: '/images/about/me.jpg',
         illust: '',
