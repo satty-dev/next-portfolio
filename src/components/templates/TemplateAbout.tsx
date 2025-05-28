@@ -12,6 +12,16 @@ import {
     Grid,
 } from '@mui/material';
 
+// icons
+import {
+    FaTools,
+    FaGraduationCap,
+    FaBuilding,
+    FaCertificate,
+    FaBook,
+} from 'react-icons/fa';
+import { MdLocationOn } from 'react-icons/md';
+
 // components
 import { Template } from '@/components/layouts/Template';
 import { PageTitle } from '@/components/materials/PageTitle';
@@ -111,12 +121,40 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
                                 {about.bio}
                             </Typography>
 
+                            {/* location */}
+                            <Stack
+                                direction='row'
+                                alignItems='center'
+                                spacing={1}
+                                mb={1}>
+                                <MdLocationOn />
+                                <Typography
+                                    variant='h6'
+                                    gutterBottom>
+                                    Location
+                                </Typography>
+                            </Stack>
+                            <Stack
+                                spacing={1}
+                                mb={2}>
+                                <Typography variant='body2'>
+                                    {about.location}
+                                </Typography>
+                            </Stack>
+
                             {/* Skills */}
-                            <Typography
-                                variant='h6'
-                                gutterBottom>
-                                Skills
-                            </Typography>
+                            <Stack
+                                direction='row'
+                                alignItems='center'
+                                spacing={1}
+                                mb={1}>
+                                <FaTools />
+                                <Typography
+                                    variant='h6'
+                                    gutterBottom>
+                                    Skills
+                                </Typography>
+                            </Stack>
                             <Stack
                                 direction='row'
                                 spacing={1}
@@ -132,11 +170,18 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
                             </Stack>
 
                             {/* Education */}
-                            <Typography
-                                variant='h6'
-                                gutterBottom>
-                                Education
-                            </Typography>
+                            <Stack
+                                direction='row'
+                                alignItems='center'
+                                spacing={1}
+                                mb={1}>
+                                <FaGraduationCap />
+                                <Typography
+                                    variant='h6'
+                                    gutterBottom>
+                                    Education
+                                </Typography>
+                            </Stack>
                             <Stack
                                 spacing={1}
                                 mb={2}>
@@ -168,11 +213,18 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
                             </Stack>
 
                             {/* Career */}
-                            <Typography
-                                variant='h6'
-                                gutterBottom>
-                                Career
-                            </Typography>
+                            <Stack
+                                direction='row'
+                                alignItems='center'
+                                spacing={1}
+                                mb={1}>
+                                <FaBuilding />
+                                <Typography
+                                    variant='h6'
+                                    gutterBottom>
+                                    Career
+                                </Typography>
+                            </Stack>
                             <Stack
                                 spacing={1}
                                 mb={2}>
@@ -217,11 +269,18 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
 
                 {/* Certifications */}
                 <Box mb={4}>
-                    <Typography
-                        variant='h6'
-                        gutterBottom>
-                        Certifications
-                    </Typography>
+                    <Stack
+                        direction='row'
+                        alignItems='center'
+                        spacing={1}
+                        mb={1}>
+                        <FaCertificate />
+                        <Typography
+                            variant='h6'
+                            gutterBottom>
+                            Certifications
+                        </Typography>
+                    </Stack>
                     <Grid
                         container
                         spacing={2}>
@@ -266,11 +325,18 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
 
                 {/* Researches */}
                 <Box mb={4}>
-                    <Typography
-                        variant='h6'
-                        gutterBottom>
-                        Researches
-                    </Typography>
+                    <Stack
+                        direction='row'
+                        alignItems='center'
+                        spacing={1}
+                        mb={1}>
+                        <FaBook />
+                        <Typography
+                            variant='h6'
+                            gutterBottom>
+                            Researches
+                        </Typography>
+                    </Stack>
                     <Grid
                         container
                         spacing={2}>

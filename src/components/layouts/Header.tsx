@@ -29,7 +29,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
 // icons
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 // libs
 import { useColorModeContext } from '@/libs/theme/ThemeRegistry';
@@ -39,6 +39,24 @@ const navItems = [
     { href: '/about', label: 'About' },
     { href: '/works', label: 'Works' },
     { href: '/practice/01', label: 'Practice' },
+];
+
+const snsLinks = [
+    {
+        label: 'Twitter',
+        icon: <FaTwitter size={20} />,
+        href: 'https://x.com/i_am_satty',
+    },
+    {
+        label: 'LinkedIn',
+        icon: <FaLinkedin size={20} />,
+        href: 'https://www.linkedin.com/in/iamsatty/',
+    },
+    {
+        label: 'GitHub',
+        icon: <FaGithub size={20} />,
+        href: 'https://github.com/satty-dev',
+    },
 ];
 
 export const Header = () => {
@@ -108,9 +126,11 @@ export const Header = () => {
                                         <Button
                                             color='inherit'
                                             sx={{
+                                                borderBottom:
+                                                    '2px solid transparent', // 常に2pxぶんスペース確保し、ホバー時のカクツキを防止
+                                                borderRadius: 0,
                                                 '&:hover': {
                                                     borderBottom: `2px solid ${theme.palette.primary.main}`,
-                                                    borderRadius: 0,
                                                 },
                                             }}>
                                             {label}
@@ -123,36 +143,20 @@ export const Header = () => {
                             <Stack
                                 direction='row'
                                 spacing={1}>
-                                <Tooltip title='Instagram'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://instagram.com/your_username'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaInstagram size={20} />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title='LinkedIn'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://linkedin.com/in/your_username'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaLinkedin size={20} />
-                                    </IconButton>
-                                </Tooltip>
-                                <Tooltip title='GitHub'>
-                                    <IconButton
-                                        component='a'
-                                        href='https://github.com/your_username'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                        color='inherit'>
-                                        <FaGithub size={20} />
-                                    </IconButton>
-                                </Tooltip>
+                                {snsLinks.map(({ label, icon, href }) => (
+                                    <Tooltip
+                                        key={label}
+                                        title={label}>
+                                        <IconButton
+                                            component='a'
+                                            href={href}
+                                            target='_blank'
+                                            rel='noopener noreferrer'
+                                            color='inherit'>
+                                            {icon}
+                                        </IconButton>
+                                    </Tooltip>
+                                ))}
                             </Stack>
 
                             {/* Theme Toggle */}
@@ -165,7 +169,7 @@ export const Header = () => {
                                 borderRadius={2}
                                 bgcolor={theme.palette.background.paper}
                                 boxShadow={1}>
-                                <Tooltip title='ライトモード'>
+                                <Tooltip title='Light mode'>
                                     <IconButton
                                         color={
                                             selectedMode === 'light'
@@ -177,7 +181,7 @@ export const Header = () => {
                                         <LightModeIcon fontSize='small' />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title='ダークモード'>
+                                <Tooltip title='Dark mode'>
                                     <IconButton
                                         color={
                                             selectedMode === 'dark'
@@ -189,7 +193,7 @@ export const Header = () => {
                                         <DarkModeIcon fontSize='small' />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title='システムに従う'>
+                                <Tooltip title='Follow system'>
                                     <IconButton
                                         color={
                                             selectedMode === 'device'
@@ -234,30 +238,17 @@ export const Header = () => {
                         direction='row'
                         spacing={1}
                         justifyContent='center'>
-                        <IconButton
-                            component='a'
-                            href='https://instagram.com/your_username'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaInstagram />
-                        </IconButton>
-                        <IconButton
-                            component='a'
-                            href='https://linkedin.com/in/your_username'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaLinkedin />
-                        </IconButton>
-                        <IconButton
-                            component='a'
-                            href='https://github.com/your_username'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                            color='inherit'>
-                            <FaGithub />
-                        </IconButton>
+                        {snsLinks.map(({ label, icon, href }) => (
+                            <IconButton
+                                key={label}
+                                component='a'
+                                href={href}
+                                target='_blank'
+                                rel='noopener noreferrer'
+                                color='inherit'>
+                                {icon}
+                            </IconButton>
+                        ))}
                     </Stack>
                     <Divider sx={{ my: 1 }} />
                     <Stack

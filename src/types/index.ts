@@ -30,6 +30,7 @@ export interface TAbout {
     name: string;
     job: string;
     bio: string;
+    location: string;
     images: {
         photo: string;
         illust: string;
