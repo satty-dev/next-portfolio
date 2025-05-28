@@ -2,6 +2,8 @@
 
 これは、ポートフォリオサイトである。Next.jsを主としてフロントエンド学中の一環として利用する。
 
+サイト(https://satty-portfolio.vercel.app/)
+
 ## 環境
 
 - typescript
@@ -17,6 +19,7 @@
   - [公式](https://www.reactbits.dev/)
 - GitHub
   - [リポジトリ](https://github.com/satty-dev/next-portfolio)
+- Google Analytics
 - Prettier
 ```bash
 # 以下のコマンドで実行（.prettierignoreで設定されたファイルは無視）
