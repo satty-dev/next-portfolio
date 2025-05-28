@@ -2,13 +2,13 @@
 import { TAbout } from '@/types/index';
 
 export const dataAbout: TAbout = {
-    main_message: 'Passion Fuels Purpose!',
+    main_message: 'Change what’s possible!',
     name: 'Sadahiro Suzuki (Satty)',
     job: 'UX Engineer',
     bio: 'I am committed to user-centered UX design and development. I continuously learn new technologies and methodologies to pursue better user experiences.',
     images: {
-        photo: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
-        illust: 'https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp',
+        photo: '/images/about/me.jpg',
+        illust: '',
     },
     skills: ['Figma', 'React', 'TypeScript', 'MUI'],
     histories: [
