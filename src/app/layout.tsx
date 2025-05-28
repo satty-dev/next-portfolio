@@ -18,6 +18,21 @@ export const metadata: Metadata = {
         "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
     keywords: ['Designer', 'Portfolio', 'UI/UX', 'Web Design', 'Satty'],
     authors: [{ name: 'Satty' }],
+    other: {
+        'og:title': 'Satty Portfolio',
+        'og:description':
+            "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
+        'og:image':
+            'https://satty-portfolio.vercel.app/images/home/main_visual.png',
+        'og:url': 'https://satty-portfolio.vercel.app/',
+        'og:type': 'website',
+        'twitter:card': 'summary_large_image',
+        'twitter:title': 'Satty Portfolio',
+        'twitter:description':
+            "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
+        'twitter:image':
+            'https://satty-portfolio.vercel.app/images/home/main_visual.png',
+    },
 };
 
 export default function RootLayout({
