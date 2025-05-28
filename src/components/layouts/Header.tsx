@@ -126,9 +126,11 @@ export const Header = () => {
                                         <Button
                                             color='inherit'
                                             sx={{
+                                                borderBottom:
+                                                    '2px solid transparent', // 常に2pxぶんスペース確保し、ホバー時のカクツキを防止
+                                                borderRadius: 0,
                                                 '&:hover': {
                                                     borderBottom: `2px solid ${theme.palette.primary.main}`,
-                                                    borderRadius: 0,
                                                 },
                                             }}>
                                             {label}
@@ -167,7 +169,7 @@ export const Header = () => {
                                 borderRadius={2}
                                 bgcolor={theme.palette.background.paper}
                                 boxShadow={1}>
-                                <Tooltip title='ライトモード'>
+                                <Tooltip title='Light mode'>
                                     <IconButton
                                         color={
                                             selectedMode === 'light'
@@ -179,7 +181,7 @@ export const Header = () => {
                                         <LightModeIcon fontSize='small' />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title='ダークモード'>
+                                <Tooltip title='Dark mode'>
                                     <IconButton
                                         color={
                                             selectedMode === 'dark'
@@ -191,7 +193,7 @@ export const Header = () => {
                                         <DarkModeIcon fontSize='small' />
                                     </IconButton>
                                 </Tooltip>
-                                <Tooltip title='システムに従う'>
+                                <Tooltip title='Follow system'>
                                     <IconButton
                                         color={
                                             selectedMode === 'device'
