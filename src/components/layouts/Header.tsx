@@ -29,7 +29,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness';
 
 // icons
-import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaTwitter, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 // libs
 import { useColorModeContext } from '@/libs/theme/ThemeRegistry';
@@ -123,20 +123,20 @@ export const Header = () => {
                             <Stack
                                 direction='row'
                                 spacing={1}>
-                                <Tooltip title='Instagram'>
+                                <Tooltip title='Twitter'>
                                     <IconButton
                                         component='a'
-                                        href='https://instagram.com/your_username'
+                                        href='https://x.com/i_am_satty'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         color='inherit'>
-                                        <FaInstagram size={20} />
+                                        <FaTwitter size={20} />
                                     </IconButton>
                                 </Tooltip>
                                 <Tooltip title='LinkedIn'>
                                     <IconButton
                                         component='a'
-                                        href='https://linkedin.com/in/your_username'
+                                        href='https://www.linkedin.com/in/iamsatty/'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         color='inherit'>
@@ -146,7 +146,7 @@ export const Header = () => {
                                 <Tooltip title='GitHub'>
                                     <IconButton
                                         component='a'
-                                        href='https://github.com/your_username'
+                                        href='https://github.com/satty-dev'
                                         target='_blank'
                                         rel='noopener noreferrer'
                                         color='inherit'>
@@ -236,15 +236,15 @@ export const Header = () => {
                         justifyContent='center'>
                         <IconButton
                             component='a'
-                            href='https://instagram.com/your_username'
+                            href='https://x.com/i_am_satty'
                             target='_blank'
                             rel='noopener noreferrer'
                             color='inherit'>
-                            <FaInstagram />
+                            <FaTwitter />
                         </IconButton>
                         <IconButton
                             component='a'
-                            href='https://linkedin.com/in/your_username'
+                            href='https://www.linkedin.com/in/iamsatty/'
                             target='_blank'
                             rel='noopener noreferrer'
                             color='inherit'>
@@ -252,7 +252,7 @@ export const Header = () => {
                         </IconButton>
                         <IconButton
                             component='a'
-                            href='https://github.com/your_username'
+                            href='https://github.com/satty-dev'
                             target='_blank'
                             rel='noopener noreferrer'
                             color='inherit'>
