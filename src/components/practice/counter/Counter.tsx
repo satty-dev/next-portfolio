@@ -46,10 +46,10 @@ const getCurrentAge = (): number => {
 const getMessageForCount = (count: number): string | null => {
     // 通常メッセージ
     const messages: Record<number, string> = {
-        3: '3回目だよ！',
-        8: '🎉 Sattyの誕生日の月！',
-        10: '🚀 10回達成！すごい！',
-        14: '🎂 Sattyの誕生日の日付！',
+        3: 'This is the 3rd time!',
+        8: "🎉 The month of Satty's birthday!",
+        10: '🚀 Reached 10 times! Awesome!',
+        14: "🎂 The date of Satty's birthday!",
     };
 
     const today = getTodayDate();
@@ -57,19 +57,19 @@ const getMessageForCount = (count: number): string | null => {
 
     // 特別メッセージ：今日と同じ数値
     if (count === today) {
-        return `今日は${today}日！ぴったりだね🎯`;
+        return `Today is the ${today}th! Perfect match 🎯`;
     }
 
     // 特別メッセージ：Sattyの年齢
     if (count === age) {
-        return `Sattyの年齢と同じ${age}になったよ🙋‍♂️`;
+        return `You've reached ${age}, which is the same as Satty's age 🙋‍♂️`;
     }
 
     return messages[count] ?? null;
 };
 
 export const Counter = () => {
-    const [title, setTitle] = useState('カウンター');
+    const [title, setTitle] = useState('Counter');
     const [count, setCount] = useState(0);
     const [message, setMessage] = useState<string | null>(null);
     const [showMessage, setShowMessage] = useState(true); // 表示切り替え
@@ -122,7 +122,7 @@ export const Counter = () => {
             </Popover>
 
             <TextField
-                label='タイトル'
+                label='Title'
                 variant='outlined'
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
@@ -160,8 +160,7 @@ export const Counter = () => {
 
             <Box
                 display='flex'
-                alignItems='center'
-                >
+                alignItems='center'>
                 <FormControlLabel
                     control={
                         <Switch
@@ -170,12 +169,12 @@ export const Counter = () => {
                             color='primary'
                         />
                     }
-                    label='Sattyモード'
+                    label='Satty mode'
                     sx={{ marginRight: 0 }}
                 />
                 <Tooltip
                     title={
-                        'カウントに応じたSattyからのメッセージ表示を切り替えます'
+                        'A message from Satty will be displayed according to the count.'
                     }>
                     <IconButton size='small'>
                         <HelpIcon fontSize='small' />
