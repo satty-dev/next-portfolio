@@ -17,14 +17,6 @@ export interface THome {
     };
 }
 
-export interface testTAbout {
-    main_message: string;
-    name: string;
-    bio: string;
-    image: string;
-    skills: string[];
-}
-
 export interface TAbout {
     main_message: string;
     name: string;
