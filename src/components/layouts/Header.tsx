@@ -139,6 +139,18 @@ export const Header = () => {
                                 ))}
                             </Stack>
 
+                            {/* Contact button */}
+                            <Button
+                                variant='outlined'
+                                color='primary'
+                                component='a'
+                                href='/contact'
+                                sx={{
+                                    textTransform: 'none',
+                                }}>
+                                Contact
+                            </Button>
+
                             {/* SNS Links */}
                             <Stack
                                 direction='row'
@@ -233,6 +245,15 @@ export const Header = () => {
                             </ListItemButton>
                         ))}
                     </List>
+                    <Button
+                        variant='outlined'
+                        color='primary'
+                        fullWidth
+                        component='a'
+                        href='/contact'
+                        sx={{ mb: 2 }}>
+                        Contact
+                    </Button>
                     <Divider sx={{ my: 1 }} />
                     <Stack
                         direction='row'

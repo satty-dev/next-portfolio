@@ -60,3 +60,15 @@ export interface TWork {
     skills: string[];
     link: string;
 }
+
+export interface TContactItem {
+    name: string;
+    label: string;
+    required: boolean;
+    type: 'text' | 'email' | 'textarea';
+}
+
+export interface TContact {
+    actionUrl: string;
+    items: TContactItem[];
+}
