@@ -1,12 +1,5 @@
 // MUI
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    Stack,
-    Chip,
-} from '@mui/material';
+import { Box, Typography, Card, CardMedia, Stack, Chip } from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';

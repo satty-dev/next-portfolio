@@ -5,7 +5,7 @@ import { Counter } from '@/components/practice/counter/Counter';
 describe('Counter Test', () => {
     test('Counter Test 1', () => {
         render(<Counter />);
-        const button = screen.getByRole('button', {name: '＋'})
+        const button = screen.getByRole('button', { name: '＋' });
         expect(button).toBeVisible();
     });
 });

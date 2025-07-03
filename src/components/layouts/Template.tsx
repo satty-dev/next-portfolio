@@ -20,13 +20,14 @@ export const Template = (props: Template) => {
                 flexDirection: 'column',
                 minHeight: '100vh',
             }}>
-            <Box sx={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                right: 0,
-                zIndex: 1100,
-            }}>
+            <Box
+                sx={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 1100,
+                }}>
                 <Header />
             </Box>
             <Container
