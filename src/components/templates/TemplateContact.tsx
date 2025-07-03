@@ -148,7 +148,7 @@ export const TemplateContact = ({ contact }: TemplateContactProps) => {
                                         type='submit'
                                         variant='contained'
                                         color='primary'>
-                                        送信
+                                        Send
                                     </Button>
                                 </Box>
                             </Stack>
