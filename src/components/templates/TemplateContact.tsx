@@ -74,7 +74,7 @@ export const TemplateContact = ({ contact }: TemplateContactProps) => {
                 <PageTitle title='Contact' />
                 <Container
                     maxWidth='sm'
-                    sx={{ py: 6 }}>
+                    sx={{ pb: 6 }}>
                     {submitted ? (
                         <>
                             <Typography
@@ -106,6 +106,14 @@ export const TemplateContact = ({ contact }: TemplateContactProps) => {
                     ) : (
                         <form onSubmit={handleSubmit}>
                             <Stack spacing={4}>
+                                <Typography
+                                    variant='body1'
+                                    sx={{ mb: 4 }}>
+                                    Have feedback on the site? Want to
+                                    collaborate? Or just have something on your
+                                    mind? Feel free to drop a message — I’d love
+                                    to hear from you!
+                                </Typography>
                                 {contact.items.map((item) => (
                                     <TextField
                                         key={item.name}
