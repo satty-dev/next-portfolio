@@ -54,8 +54,9 @@ export const TemplateContact = ({ contact }: TemplateContactProps) => {
                 mode: 'no-cors',
             });
             setSubmitted(true);
-        } catch () {
-            alert('送信に失敗しました。時間をおいて再度お試しください。');
+        } catch (err) {
+            console.error('Submission failed:', err);
+            alert('Submission failed. Please try again later.');
         }
     };
 
