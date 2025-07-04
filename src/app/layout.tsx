@@ -12,6 +12,9 @@ import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeRegistry } from '@/libs/theme/ThemeRegistry';
 import { GoogleAnalytics } from '@/libs/analytics/GoogleAnalytics';
 
+// ベースURLを環境変数から取得
+const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
+
 export const metadata: Metadata = {
     title: 'Satty Portfolio',
     description:
@@ -22,16 +25,14 @@ export const metadata: Metadata = {
         'og:title': 'Satty Portfolio',
         'og:description':
             "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
-        'og:image':
-            'https://satty-portfolio.vercel.app/images/home/main_visual.png',
-        'og:url': 'https://satty-portfolio.vercel.app/',
+        'og:image': `${baseUrl}/images/home/main_visual.png`,
+        'og:url': `${baseUrl}/`,
         'og:type': 'website',
         'twitter:card': 'summary_large_image',
         'twitter:title': 'Satty Portfolio',
         'twitter:description':
             "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
-        'twitter:image':
-            'https://satty-portfolio.vercel.app/images/home/main_visual.png',
+        'twitter:image': `${baseUrl}/images/home/main_visual.png`,
     },
 };
 

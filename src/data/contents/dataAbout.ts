@@ -11,7 +11,8 @@ export const dataAbout: TAbout = {
         photo: '/images/about/me.jpg',
         illust: '',
     },
-    skills: ['Figma', 'React', 'TypeScript', 'MUI'],
+    skills: ['Figma', 'XD', 'Photoshop', 'Illustrator', 'React', 'Vue.js', 'TypeScript', 'C#'],
+
     histories: [
         {
             type: 'education',
