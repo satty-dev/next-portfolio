@@ -1,18 +1,14 @@
 import { MetadataRoute } from 'next';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    // 動的ページ（/works/[id]）のデータをAPIから取得
-    const worksRes = await fetch(
-        'https://satty-portfolio.vercel.app/api/works',
-        {
-            // revalidate: 60, // 必要に応じてキャッシュ制御
-            next: { revalidate: 60 },
-        },
-    );
-    const works: { id: string; updatedAt?: string }[] = await worksRes.json();
+    // サイトのベースURLを環境変数から取得
+    const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
 
-    // サイトのベースURL
-    const baseUrl = 'https://satty-portfolio.vercel.app';
+    // 動的ページ（/works/[id]）のデータをAPIから取得
+    const worksRes = await fetch(`${baseUrl}/api/works`, {
+        next: { revalidate: 60 },
+    });
+    const works: { id: string; updatedAt?: string }[] = await worksRes.json();
 
     // 静的ページ
     const staticPages = ['', '/about', '/contact', '/practice/01', '/works'];

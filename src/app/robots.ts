@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
+    const baseUrl = process.env.BASE_URL ?? 'http://localhost:3000';
     return {
         rules: [
             {
@@ -8,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://satty-portfolio.vercel.app/sitemap.xml',
+        sitemap: `${baseUrl}/sitemap.xml`,
     };
 }
