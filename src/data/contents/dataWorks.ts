@@ -57,4 +57,15 @@ export const dataWorks: TWork[] = [
         skills: ['After Effects'],
         link: '',
     },
+    {
+        id: '6',
+        title: 'Shin-On Hamon: Waves of Color Born from Sound',
+        summary:
+            'An interactive art piece where your voice transforms into vivid ripples of color spreading through space.',
+        description:
+            'When you speak into the microphone, your voice is analyzed in real time using Processing, and its tone, pitch, and intensity are visualized as colorful ripples projected onto the wall. This work allows you to experience the transient beauty and emotional resonance of your own voice by making its fleeting qualities visible. By utilizing projection mapping technology, it offers a unique sensation of your voice expanding throughout the space as waves. Discover the hidden patterns of your heart through the ripples created by your own voice.',
+        image: '/images/works/voice_ripple.png',
+        skills: ['Processing', 'Projection Mapping', 'Interactive Art'],
+        link: '',
+    },
 ];
