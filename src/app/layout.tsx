@@ -43,6 +43,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
+            <head>
+                {/* Google Search Console 用のサイト認証 */}
+                <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
+            </head>
             <body className={`antialiased`}>
                 <AppRouterCacheProvider>
                     <ThemeRegistry>{children}</ThemeRegistry>
