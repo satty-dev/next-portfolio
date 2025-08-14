@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     title: 'Satty Portfolio',
     description:
         "Satty's portfolio site. Showcasing achievements in UI/UX design, web design, and graphic production.",
-    keywords: ['Designer', 'Portfolio', 'UI/UX', 'Web Design', 'Satty'],
+    keywords: ['UX Engineer', 'UI Engineer', 'Portfolio', 'UI/UX', 'Satty'],
     authors: [{ name: 'Satty' }],
     other: {
         'og:title': 'Satty Portfolio',
