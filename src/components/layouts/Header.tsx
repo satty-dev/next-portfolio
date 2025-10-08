@@ -38,6 +38,7 @@ const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/works', label: 'Works' },
+    { href: '/quotes', label: 'Quotes' },
     { href: '/practice/01', label: 'Practice' },
 ];
 
