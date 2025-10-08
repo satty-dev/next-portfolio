@@ -14,7 +14,7 @@ type TemplateWorkItemProps = {
 export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
     return (
         <Template>
-            <Box className='container mx-auto px-4 py-[50px]'>
+            <Box className='container mx-auto px-4 py-[10px]'>
                 <Box sx={{ maxWidth: 800, margin: '0 auto' }}>
                     <Typography
                         variant='h3'

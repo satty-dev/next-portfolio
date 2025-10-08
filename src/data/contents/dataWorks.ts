@@ -68,4 +68,15 @@ export const dataWorks: TWork[] = [
         skills: ['Processing', 'Projection Mapping', 'Interactive Art'],
         link: '',
     },
+    {
+        id: '7',
+        title: '86 Girl',
+        summary:
+            'A creative fusion of original character illustrations with automotive photography featuring my beloved TOYOTA 86.',
+        description:
+            'A personal project combining my passion for drawing characters and automotive culture. This series features original character illustrations seamlessly integrated with photographs of my Toyota 86 (ZN6). Each piece tells a unique story by blending hand-drawn anime-style characters with real automotive scenes, creating a distinctive visual narrative that celebrates both artistic expression and car culture. The project showcases various environments and character poses, demonstrating the versatility of combining traditional illustration techniques with photography.',
+        image: '/images/works/86girl.png',
+        skills: ['Photoshop'],
+        link: '',
+    },
 ];

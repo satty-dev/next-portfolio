@@ -17,7 +17,7 @@ export const TemplateWorkList = (props: TemplateWorkListProps) => {
     const { workList } = props;
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
+            <Box className='container mx-auto py-[10px]'>
                 <PageTitle title='Works' />
                 <Grid
                     container

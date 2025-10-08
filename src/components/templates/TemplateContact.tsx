@@ -70,7 +70,7 @@ export const TemplateContact = ({ contact }: TemplateContactProps) => {
 
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
+            <Box className='container mx-auto py-[10px]'>
                 <PageTitle title='Contact' />
                 <Container
                     maxWidth='sm'

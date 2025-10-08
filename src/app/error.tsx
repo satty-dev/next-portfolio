@@ -16,7 +16,7 @@ export default function Error({ error, reset }: ErrorProps) {
     }, [error]);
 
     return (
-        <Box className='container mx-auto py-[50px] text-center'>
+        <Box className='container mx-auto py-[10px] text-center'>
             <Typography
                 variant='h3'
                 fontWeight='bold'

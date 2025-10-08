@@ -40,7 +40,7 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
 
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
+            <Box className='container mx-auto py-[10px]'>
                 <PageTitle title='About Me' />
                 <Typography
                     variant='h3'
@@ -157,9 +157,9 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
                             </Stack>
                             <Stack
                                 direction='row'
-                                spacing={1}
                                 flexWrap='wrap'
-                                mb={2}>
+                                mb={2}
+                                sx={{gap: '0.5rem'}}>
                                 {about.skills.map((skill) => (
                                     <Chip
                                         key={skill}

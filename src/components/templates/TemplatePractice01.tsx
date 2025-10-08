@@ -8,7 +8,7 @@ import { Counter } from '@/components/practice/counter/Counter';
 export const TemplatePractice01 = () => {
     return (
         <Template>
-            <div className='container mx-auto py-[50px]'>
+            <div className='container mx-auto py-[10px]'>
                 <h2 className='mb-5 text-center text-[50px] font-bold'>
                     Counter
                 </h2>
