@@ -65,6 +65,7 @@ export interface TQuote {
     id: number;
     quote: string;
     author: string;
+    color?: string;
 }
 
 export interface TContactItem {
