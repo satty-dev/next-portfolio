@@ -61,6 +61,12 @@ export interface TWork {
     link: string;
 }
 
+export interface TQuote {
+    id: number;
+    quote: string;
+    author: string;
+}
+
 export interface TContactItem {
     name: string;
     label: string;
