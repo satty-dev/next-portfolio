@@ -157,9 +157,9 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
                             </Stack>
                             <Stack
                                 direction='row'
-                                spacing={1}
                                 flexWrap='wrap'
-                                mb={2}>
+                                mb={2}
+                                sx={{gap: '0.5rem'}}>
                                 {about.skills.map((skill) => (
                                     <Chip
                                         key={skill}

@@ -17,7 +17,7 @@ export const dataAbout: TAbout = {
         'Photoshop',
         'Illustrator',
         'React',
-        'Vue.js',
+        'Next.js',
         'TypeScript',
         'C#',
     ],
