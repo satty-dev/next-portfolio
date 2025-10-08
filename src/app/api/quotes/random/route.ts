@@ -7,6 +7,6 @@ export async function GET() {
     // ランダムなインデックスを生成
     const randomIndex = Math.floor(Math.random() * dataQuotes.length);
     const randomQuote = dataQuotes[randomIndex];
-    
+
     return NextResponse.json(randomQuote);
 }

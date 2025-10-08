@@ -99,28 +99,26 @@ export const TemplateQuotes = ({ quotes }: TemplateQuotesProps) => {
                         {mode === 'all' ? (
                             <Stack spacing={4}>
                                 {quotes.map((quote) => (
-                                    <Card 
+                                    <Card
                                         key={quote.id}
                                         sx={{
-                                            backgroundColor: quote.color || '#424242',
+                                            backgroundColor:
+                                                quote.color || '#424242',
                                             transition: 'all 0.3s ease',
                                             '&:hover': {
                                                 transform: 'translateY(-2px)',
                                                 boxShadow: 3,
-                                            }
-                                        }}
-                                    >
+                                            },
+                                        }}>
                                         <CardContent>
-                                            <Typography 
+                                            <Typography
                                                 variant='h6'
-                                                sx={{ color: '#FFFFFF' }}
-                                            >
+                                                sx={{ color: '#FFFFFF' }}>
                                                 {quote.quote}
                                             </Typography>
                                             <Typography
                                                 variant='body2'
-                                                sx={{ color: '#FFFFFF' }}
-                                            >
+                                                sx={{ color: '#FFFFFF' }}>
                                                 - {quote.author}
                                             </Typography>
                                         </CardContent>
@@ -158,17 +156,19 @@ export const TemplateQuotes = ({ quotes }: TemplateQuotesProps) => {
                                                 )}
                                             </Button>
                                         </Box>
-                                        <Card 
-                                            sx={{ 
+                                        <Card
+                                            sx={{
                                                 minWidth: '100%',
-                                                backgroundColor: randomQuote.color || '#424242',
+                                                backgroundColor:
+                                                    randomQuote.color ||
+                                                    '#424242',
                                                 transition: 'all 0.3s ease',
                                                 '&:hover': {
-                                                    transform: 'translateY(-2px)',
+                                                    transform:
+                                                        'translateY(-2px)',
                                                     boxShadow: 3,
-                                                }
-                                            }}
-                                        >
+                                                },
+                                            }}>
                                             <CardContent
                                                 sx={{
                                                     textAlign: 'center',
@@ -177,7 +177,10 @@ export const TemplateQuotes = ({ quotes }: TemplateQuotesProps) => {
                                                 <Typography
                                                     variant='h4'
                                                     gutterBottom
-                                                    sx={{ mb: 3, color: '#FFFFFF' }}>
+                                                    sx={{
+                                                        mb: 3,
+                                                        color: '#FFFFFF',
+                                                    }}>
                                                     &ldquo;{randomQuote.quote}
                                                     &rdquo;
                                                 </Typography>
