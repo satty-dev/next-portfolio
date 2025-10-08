@@ -57,7 +57,15 @@ export const TemplateQuotes = ({ quotes }: TemplateQuotesProps) => {
     return (
         <Template>
             <Box className='container mx-auto py-[50px]'>
-                <PageTitle title='Quotes on Design' />
+                <PageTitle title='Quotes' />
+                <Typography
+                    variant='body2'
+                    color='text.secondary'
+                    align='center'
+                    sx={{ mt: 1, mb: 1 }}>
+                    An archive of inspiring quotes that resonate with creators,
+                    filled with design philosophy.
+                </Typography>
                 <Box
                     sx={{
                         maxWidth: 'md',
