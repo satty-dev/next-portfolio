@@ -40,7 +40,7 @@ export const TemplateAbout = ({ about }: TemplateAboutProps) => {
 
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
+            <Box className='container mx-auto py-[10px]'>
                 <PageTitle title='About Me' />
                 <Typography
                     variant='h3'

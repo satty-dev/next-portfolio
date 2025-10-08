@@ -26,7 +26,7 @@ export const TemplateHome = (props: TemplateHomeProps) => {
                     alignItems: 'center',
                     gap: 6,
                 }}
-                className='container mx-auto py-[50px]'>
+                className='container mx-auto py-[10px]'>
                 <Box
                     sx={{
                         display: 'flex',

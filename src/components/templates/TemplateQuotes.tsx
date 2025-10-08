@@ -56,7 +56,7 @@ export const TemplateQuotes = ({ quotes }: TemplateQuotesProps) => {
 
     return (
         <Template>
-            <Box className='container mx-auto py-[50px]'>
+            <Box className='container mx-auto py-[10px]'>
                 <PageTitle title='Quotes' />
                 <Typography
                     variant='body2'
