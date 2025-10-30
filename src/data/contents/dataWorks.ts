@@ -35,17 +35,17 @@ export const dataWorks: TWork[] = [
         skills: ['Figma', 'HTML', 'CSS', 'Javascript', 'VB'],
         link: '',
     },
-    {
-        id: '4',
-        title: 'Banner Design Production',
-        summary:
-            'Produced various banners to enhance brand visibility and design skills.',
-        description:
-            'Designed a variety of banners using multiple tools such as Photoshop and Illustrator. Enhanced practical design skills including color scheme, layout, and typography while focusing on advertisement effectiveness and visibility.',
-        image: '/images/works/banners.png',
-        skills: ['Figma', 'Photoshop', 'Illustrator'],
-        link: '',
-    },
+    // {
+    //     id: '4',
+    //     title: 'Banner Design Production',
+    //     summary:
+    //         'Produced various banners to enhance brand visibility and design skills.',
+    //     description:
+    //         'Designed a variety of banners using multiple tools such as Photoshop and Illustrator. Enhanced practical design skills including color scheme, layout, and typography while focusing on advertisement effectiveness and visibility.',
+    //     image: '/images/works/banners.png',
+    //     skills: ['Figma', 'Photoshop', 'Illustrator'],
+    //     link: '',
+    // },
     {
         id: '5',
         title: 'Company Logo Animation',
