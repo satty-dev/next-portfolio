@@ -1,13 +1,5 @@
 // MUI
-import {
-    Box,
-    Typography,
-    Card,
-    CardMedia,
-    Stack,
-    Chip,
-    Grid,
-} from '@mui/material';
+import { Box, Typography, Card, CardMedia, Stack, Chip } from '@mui/material';
 
 // components
 import { Template } from '@/components/layouts/Template';
@@ -97,24 +89,20 @@ export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
                     </Box>
 
                     {subImages.length > 0 && (
-                        <Grid
-                            container
-                            spacing={2}>
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: 2,
+                            }}>
                             {subImages.map((image) => (
-                                <Grid
+                                <ImageCard
                                     key={image}
-                                    size={{
-                                        xs: 12,
-                                        sm: subImages.length === 1 ? 12 : 6,
-                                        md: subImages.length === 1 ? 12 : 6,
-                                    }}>
-                                    <ImageCard
-                                        image={image}
-                                        alt={work.title}
-                                    />
-                                </Grid>
+                                    image={image}
+                                    alt={work.title}
+                                />
                             ))}
-                        </Grid>
+                        </Box>
                     )}
                 </Box>
             </Box>
