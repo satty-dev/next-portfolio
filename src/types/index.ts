@@ -56,7 +56,7 @@ export interface TWork {
     title: string;
     summary: string;
     description: string;
-    image: string;
+    images: string[]; // 最大3枚
     skills: string[];
     link: string;
 }

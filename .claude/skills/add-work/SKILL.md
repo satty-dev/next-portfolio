@@ -23,7 +23,7 @@ export interface TWork {
     title: string;
     summary: string;
     description: string;
-    image: string;
+    images: string[]; // 最大3枚
     skills: string[];
     link: string;
 }
@@ -39,7 +39,7 @@ export interface TWork {
 - `description` — 詳細ページ用の説明文
 - `skills` — 使用技術・スキルの配列（例: `['Figma', 'Next.js', 'TypeScript']`）
 - `link` — 参考リンク（なければ空文字 `''`）
-- `image` — `public/images/works/` 配下の画像パス（例: `/images/works/{slug}.png`）。**画像ファイル自体の配置はユーザー側の作業**であることを伝え、まだ配置されていなければ後で配置するよう案内する
+- `images` — `public/images/works/` 配下の画像パスの配列（1〜3枚、例: `['/images/works/{slug}.png']`）。**画像ファイル自体の配置はユーザー側の作業**であることを伝え、まだ配置されていなければ後で配置するよう案内する
 
 ### 2. `dataWorks.ts` の編集
 
@@ -58,7 +58,7 @@ export interface TWork {
 
 - 追加したid: {id}
 - title: {title}
-- 画像パス: {image}（配置状況: 済み/未配置）
+- 画像パス: {images}（配置状況: 済み/未配置）
 
 ### 注意
 - 画像が未配置の場合: public/images/works/ 配下に画像ファイルを配置してください
