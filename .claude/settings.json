@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(npm run test)",
+      "Bash(npm run test:cov)",
+      "Bash(npm run build)",
+      "Bash(npm run format:check)",
+      "Bash(npm run typecheck)",
+      "Bash(git status)",
+      "Bash(git diff)",
+      "Bash(git diff:*)",
+      "Bash(git log)",
+      "Bash(git log:*)"
+    ]
+  }
+}
