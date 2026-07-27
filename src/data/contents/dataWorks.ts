@@ -35,17 +35,17 @@ export const dataWorks: TWork[] = [
         skills: ['Figma', 'HTML', 'CSS', 'Javascript', 'VB'],
         link: '',
     },
-    // {
-    //     id: '4',
-    //     title: 'Banner Design Production',
-    //     summary:
-    //         'Produced various banners to enhance brand visibility and design skills.',
-    //     description:
-    //         'Designed a variety of banners using multiple tools such as Photoshop and Illustrator. Enhanced practical design skills including color scheme, layout, and typography while focusing on advertisement effectiveness and visibility.',
-    //     images: ['/images/works/banners.png'],
-    //     skills: ['Figma', 'Photoshop', 'Illustrator'],
-    //     link: '',
-    // },
+    {
+        id: '4',
+        title: 'Banner Design Production',
+        summary:
+            'Produced various banners to enhance brand visibility and design skills.',
+        description:
+            'Designed a variety of banners using multiple tools such as Photoshop and Illustrator. Enhanced practical design skills including color scheme, layout, and typography while focusing on advertisement effectiveness and visibility.',
+        images: ['/images/works/banners.png'],
+        skills: ['Figma', 'Photoshop', 'Illustrator'],
+        link: '',
+    },
     {
         id: '5',
         title: 'Company Logo Animation',
@@ -77,6 +77,28 @@ export const dataWorks: TWork[] = [
             'A personal project combining my passion for drawing characters and automotive culture. This series features original character illustrations seamlessly integrated with photographs of my Toyota 86 (ZN6). Each piece tells a unique story by blending hand-drawn anime-style characters with real automotive scenes, creating a distinctive visual narrative that celebrates both artistic expression and car culture. The project showcases various environments and character poses, demonstrating the versatility of combining traditional illustration techniques with photography.',
         images: ['/images/works/86girl.png'],
         skills: ['Photoshop'],
+        link: '',
+    },
+    {
+        id: '8',
+        title: 'MERBO',
+        summary:
+            '',
+        description:
+            '',
+        images: ['/images/works/merbo.png'],
+        skills: ['Illustrator'],
+        link: '',
+    },
+    {
+        id: '9',
+        title: 'mercart.Inc. Logo',
+        summary:
+            '',
+        description:
+            '',
+        images: ['/images/works/mercart_logo_01.png','/images/works/mercart_logo_02.png','/images/works/mercart_logo_03.png'],
+        skills: ['Figma', 'Photoshop', 'Illustrator'],
         link: '',
     },
 ];
