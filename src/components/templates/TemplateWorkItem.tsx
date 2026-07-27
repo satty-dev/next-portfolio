@@ -1,5 +1,17 @@
+// Next.js
+import Link from 'next/link';
+
 // MUI
-import { Box, Typography, Card, CardMedia, Stack, Chip } from '@mui/material';
+import {
+    Box,
+    Typography,
+    Card,
+    CardMedia,
+    Stack,
+    Chip,
+    Button,
+} from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // components
 import { Template } from '@/components/layouts/Template';
@@ -10,6 +22,17 @@ import { TWork } from '@/types/index';
 type TemplateWorkItemProps = {
     work: TWork;
 };
+
+const BackToWorksButton = () => (
+    <Button
+        variant='outlined'
+        color='primary'
+        component={Link}
+        href='/works'
+        startIcon={<ArrowBackIcon />}>
+        Back to Works
+    </Button>
+);
 
 const ImageCard = ({ image, alt }: { image: string; alt: string }) => (
     <Card elevation={3}>
@@ -45,6 +68,10 @@ export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
         <Template>
             <Box className='container mx-auto px-4 py-[10px]'>
                 <Box sx={{ maxWidth: 800, margin: '0 auto' }}>
+                    <Box sx={{ mb: 2 }}>
+                        <BackToWorksButton />
+                    </Box>
+
                     <Typography
                         variant='h3'
                         fontWeight='bold'
@@ -104,6 +131,11 @@ export const TemplateWorkItem = ({ work }: TemplateWorkItemProps) => {
                             ))}
                         </Box>
                     )}
+
+                    <Box
+                        sx={{ mt: 4 }}>
+                        <BackToWorksButton />
+                    </Box>
                 </Box>
             </Box>
         </Template>
