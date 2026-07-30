@@ -42,7 +42,7 @@ export const MediaCard = (props: MediaCardProps) => {
                             objectFit: 'cover',
                             objectPosition: 'center',
                         }}
-                        image={work.image}
+                        image={work.images[0]}
                         title={work.title}
                     />
                     <CardContent
