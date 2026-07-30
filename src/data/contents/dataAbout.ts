@@ -40,24 +40,47 @@ export const dataAbout: TAbout = {
             organization: 'Softcreate Holdings',
             title: 'Software Engineer',
             period: '2022 - 2022',
-            description: 'Engaged in EC (E-commerce) development.',
+            description:
+                'Joined the company to develop an EC (E-commerce) site and completed onboarding training.',
         },
         {
             type: 'career',
             organization: 'AtoJ Inc.',
             title: 'UX Engineer',
-            period: '2022 - Present',
+            period: '2022 - 2025',
             description:
-                'Engaged in UI/UX design, development, and design for EC (E-commerce) services.',
+                'Assigned after training to work on both engineering and UI/UX for EC (E-commerce) services. Also served as Scrum Master, leading the team through Scrum development.',
+        },
+        {
+            type: 'career',
+            organization: 'mercart Inc.',
+            title: 'UX Engineer',
+            period: '2025 - Present',
+            description:
+                'Joined this company following a corporate spin-off driven by service growth. As a design engineer, handled the full process from design through implementation and release.',
         },
     ],
     certifications: [
+        {
+            name: 'Fundamental Information Technology Engineer Examination',
+            organization: 'IPA (Information-technology Promotion Agency, Japan)',
+            period: '2021',
+            description: 'National IT engineer qualification covering fundamental knowledge of programming, algorithms, and systems.',
+            link: 'https://www.ipa.go.jp/shiken/kubun/fe.html',
+        },
         {
             name: 'Google UX Design Professional Certificate',
             organization: 'Google',
             period: '2022',
             description: 'Google Certified UX Design Qualification',
             link: 'https://grow.google/certificates/ux-design/',
+        },
+        {
+            name: 'Statistics Certification Test, Grade 3',
+            organization: 'The Japan Statistical Society',
+            period: '2026',
+            description: 'Certification demonstrating foundational knowledge of statistics and data analysis.',
+            link: 'https://www.toukei-kentei.jp/',
         },
     ],
     researches: [
