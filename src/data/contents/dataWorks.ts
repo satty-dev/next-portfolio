@@ -85,7 +85,7 @@ export const dataWorks: TWork[] = [
         summary:
             '',
         description:
-            '',
+            'Coming soon',
         images: ['/images/works/merbo.png'],
         skills: ['Illustrator'],
         link: '',
@@ -96,7 +96,7 @@ export const dataWorks: TWork[] = [
         summary:
             '',
         description:
-            '',
+            'Coming soon',
         images: ['/images/works/mercart_logo_01.png','/images/works/mercart_logo_02.png','/images/works/mercart_logo_03.png'],
         skills: ['Figma', 'Photoshop', 'Illustrator'],
         link: '',
